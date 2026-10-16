@@ -1,0 +1,66 @@
+/* Class 11 - Step 4 : The Basics */
+
+:root {
+    /*regular design colors: gold-orange coffee-dark theme*/
+    --text: #D9C5B2;
+    --text-muted: #8C5E3C;
+    --large-text: #da6900;
+    /*unique colors*/
+    --name: #f1ee28;
+    --penname: #c4c248;
+    /*design colors*/
+    --background: #1A1A1A;
+    --border: #C5A059; 
+    /*link colors*/
+    --unvisited: #E6CA65;
+    --hover: #796126;
+
+}
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 2.0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: large;
+    color: var(--name);
+    margin-bottom: 0.05rem;
+}
+
+header h3 {
+    color: var(--penname);
+    font-size: x-small;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+header p {color: var(--text-muted); font-size:small; margin-top: 0;}
+
+h2 {
+    margin-top: 2.5rem;
+    color: var(--large-text);
+    border-bottom: 1px solid var(--border);
+
+    padding-bottom: 0.5rem;
+}
+
+a {
+    display: block;
+    padding: 0%;
+    color: var(--unvisited);
+    transition: var(--active), transform 5ms;
+}
+
+a:hover{ 
+    display: block;
+    padding: 0%;
+    color: var(--hover);
+}
+
+footer { margin-top: 4rem; color: var(--text-muted); font-size: small;}
