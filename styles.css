@@ -35,8 +35,6 @@ header {
     flex-shrink: 0;                 
 }
 
-
-
 body {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: var(--text);
@@ -94,5 +92,12 @@ footer a {
     margin-top: 4rem;
     font-size: small; 
     color: var(--text-muted); 
+    text-decoration: double;
+}
+
+footer a:hover {
+    margin-top: 8rem;
+    font-size: small;
+    color:var(--text);
     text-decoration: double;
 }
