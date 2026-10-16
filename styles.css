@@ -17,6 +17,26 @@
 
 }
 
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;       
+    gap: 2rem;                      
+}
+
+.header-text {
+    flex: 1;                        
+}
+
+.pixel-art-right {
+    width: auto;                   
+    height: 100px;                   
+    image-rendering: pixelated;     
+    flex-shrink: 0;                 
+}
+
+
+
 body {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: var(--text);
