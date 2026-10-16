@@ -50,17 +50,19 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-a {
+li a {
     display: block;
     padding: 0%;
     color: var(--unvisited);
+    text-decoration: none;
     transition: var(--active), transform 5ms;
 }
 
-a:hover{ 
+li a:hover{ 
     display: block;
     padding: 0%;
     color: var(--hover);
+    text-decoration: none;
 }
 
-footer { margin-top: 4rem; color: var(--text-muted); font-size: small;}
+footer a { margin-top: 4rem; color: var(--text-muted); font-size: small; text-decoration:double;}
