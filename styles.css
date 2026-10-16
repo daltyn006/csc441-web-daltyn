@@ -21,6 +21,7 @@ body {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: var(--text);
     background: var(--background);
+    font-size: small;
     line-height: 2.0;
     max-width: 800px;
     margin: 0 auto;
@@ -34,19 +35,23 @@ header h1 {
 }
 
 header h3 {
+    font-size: smaller;
     color: var(--penname);
-    font-size: x-small;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
-header p {color: var(--text-muted); font-size:small; margin-top: 0;}
+header p {
+    font-size:small; 
+    color: var(--text-muted); 
+    margin-top: 0;
+}
 
 h2 {
-    margin-top: 2.5rem;
+    font-size: medium;
     color: var(--large-text);
+    margin-top: 2.5rem;
     border-bottom: 1px solid var(--border);
-
     padding-bottom: 0.5rem;
 }
 
@@ -65,4 +70,9 @@ li a:hover{
     text-decoration: none;
 }
 
-footer a { margin-top: 4rem; color: var(--text-muted); font-size: small; text-decoration:double;}
+footer a { 
+    margin-top: 4rem;
+    font-size: small; 
+    color: var(--text-muted); 
+    text-decoration: double;
+}
