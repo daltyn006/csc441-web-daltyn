@@ -1,0 +1,1 @@
+A problem I had was getting the asset in the top right to continue to work with another item aligned to the left of it. My fix was to convert it to a web image instead of indexing each asset.
