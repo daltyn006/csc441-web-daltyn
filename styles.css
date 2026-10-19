@@ -10,7 +10,7 @@
     --penname: #c4c248;
     /*design colors*/
     --background: #1A1A1A;
-    --border: #C5A059; 
+    --border: #C5A059;
     /*link colors*/
     --unvisited: #E6CA65;
     --hover: #796126;
@@ -19,26 +19,32 @@
 
 header {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start;       
-    gap: 2rem;                      
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
+
 .header-text {
-    flex: 1;                        
+    flex: 1;
+}
+
+.art-left {
+    width: auto;
+    border-radius: 50%;
+    flex-shrink: 1;
 }
 
 .pixel-art-right {
-    width: auto;                   
-    height: 100px;                   
-    image-rendering: pixelated;     
-    flex-shrink: 0;                 
+    width: auto;
+    height: 100px;
+    image-rendering: pixelated;
+    flex-shrink: 0;
 }
 
 
-
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--text);
     background: var(--background);
     font-size: small;
@@ -48,24 +54,39 @@ body {
     padding: 2rem;
 }
 
+section {
+    margin-bottom: 3rem;
+}
+/* Lab 12 | Task 1: header side by side*/
+/* Lab 12 | Task 4: header stacks when there isn't rooms*/
+header { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/*Class 12 | Step 2: my own scale*/
 header h1 {
     font-size: large;
     color: var(--name);
-    margin-bottom: 0.05rem;
+    align-items: center;
 }
 
 header h3 {
     font-size: smaller;
     color: var(--penname);
+    align-items: center;
     margin-top: 0;
-    margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size:small; 
-    color: var(--text-muted); 
+    font-size: small;
+    align-items: center;
+    color: var(--text-muted);
     margin-top: 0;
+    border-bottom: 1px solid var(--border);
 }
+
 
 h2 {
     font-size: medium;
@@ -73,26 +94,44 @@ h2 {
     margin-top: 2.5rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.5rem;
+    line-height: 3rem;
+}
+/*Lab 12 | Task 2: list without bullets*/
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
 }
 
 li a {
     display: block;
-    padding: 0%;
+    padding: 0;
     color: var(--unvisited);
     text-decoration: none;
-    transition: var(--active), transform 5ms;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-li a:hover{ 
+
+li a:hover {
     display: block;
-    padding: 0%;
     color: var(--hover);
     text-decoration: none;
 }
+/*Lab 12 | Task 3: footer*/
+footer {
+    margin-top: 2rem;
+    font-size: small;
+    border-top: 1px solid var(--border);
+}
 
-footer a { 
-    margin-top: 4rem;
-    font-size: small; 
-    color: var(--text-muted); 
-    text-decoration: double;
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    text-decoration-style: double;
+}
+
+footer a:hover {
+    color: var(--text);
+    text-decoration: none;
+    text-decoration-style: double;
 }
