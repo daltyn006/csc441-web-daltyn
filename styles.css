@@ -3,7 +3,7 @@
     --text-muted: #8C5E3C;
     --large-text: #da6900;
     --name: #f1ee28;
-    --penname: #c4c248;
+    --accent: #c4c248;
     --background: #1A1A1A;
     --border: #C5A059;
     --unvisited: #E6CA65;
@@ -20,7 +20,14 @@ body {
     margin: 0 auto;
     padding: 2rem;
 }
+nav li {
+    list-style: none;   
+}
 
+nav a.current {
+   border-bottom-color: var(--border);
+   color: var(--accent)
+}
 header {
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +55,7 @@ header h1 {
 
 header h3 {
     font-size: smaller;
-    color: var(--penname);
+    color: var(--accent);
     margin: 0;
 }
 
@@ -80,7 +87,7 @@ header p {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 
-    animation: playArt 3s steps(32) infinite;
+    animation: playArt 2s steps(32) infinite;
     animation-play-state: running;
 }
 
