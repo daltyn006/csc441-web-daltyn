@@ -20,14 +20,18 @@ body {
     margin: 0 auto;
     padding: 2rem;
 }
-nav li {
-    list-style: none;   
+
+nav a {
+    list-style: none;
+
 }
 
 nav a.current {
-   border-bottom-color: var(--border);
-   color: var(--accent)
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    list-style: none;
 }
+
 header {
     display: flex;
     flex-wrap: wrap;
