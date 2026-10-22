@@ -21,6 +21,7 @@ body {
     padding: 2rem;
 }
 
+/* Lab 13 · Task 4: page selector */
 nav a {
     list-style: none;
 }
@@ -32,6 +33,7 @@ nav a.current {
     margin: 0;
     padding: 0;
 }
+/* end lab */
 
 header {
     display: flex;
@@ -83,7 +85,7 @@ header p {
 .pixel-art-right {
     width: 25px;
     height: 50px;
-    background-image: url('./assets/default_graphic/default_spritesheet.png');
+    background-image: url('./assets/animations/default_spritesheet.png');
     background-size: 800px 50px;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -93,11 +95,11 @@ header p {
     image-rendering: crisp-edges;
 
     animation: playArt 2s steps(32) infinite;
-    animation-play-state: running;
+    animation-play-state: paused;
 }
 
 .pixel-art-right-toggle:checked ~ .pixel-art-right {
-    animation-play-state: paused;
+    animation-play-state: running;
 }
 
 .sprite-right-only {
@@ -120,6 +122,7 @@ header p {
         background-position: -800px 0px;
     }
 }
+/*end spritesheet section*/
 
 section {
     margin-bottom: 3rem;
