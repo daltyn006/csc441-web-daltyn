@@ -1,21 +1,21 @@
 :root {
-    --text: #D9C5B2;
-    --text-muted: #8C5E3C;
+    --text: #d9c5b2;
+    --text-muted: #8c5e3c;
     --large-text: #da6900;
     --name: #f1ee28;
     --accent: #c4c248;
-    --background: #1A1A1A;
-    --border: #C5A059;
-    --unvisited: #E6CA65;
+    --background: #1a1a1a;
+    --border: #c5a059;
+    --unvisited: #e6ca65;
     --hover: #796126;
 }
 
 body {
-    font-family:  Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, "Trebuchet MS", sans-serif;
     color: var(--text);
     background: var(--background);
     font-size: small;
-    line-height: 2.0;
+    line-height: 2;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
@@ -33,7 +33,8 @@ nav a.current {
     margin: 0;
     padding: 0;
 }
-/* end lab */
+
+/* end page selector */
 
 header {
     display: flex;
@@ -85,7 +86,7 @@ header p {
 .pixel-art-right {
     width: 25px;
     height: 50px;
-    background-image: url('./assets/animations/default_spritesheet.png');
+    background-image: url("./assets/animations/default_spritesheet.png");
     background-size: 800px 50px;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -98,7 +99,7 @@ header p {
     animation-play-state: paused;
 }
 
-.pixel-art-right-toggle:checked ~ .pixel-art-right {
+.pixel-art-right-toggle:checked~.pixel-art-right {
     animation-play-state: running;
 }
 
@@ -118,10 +119,12 @@ header p {
     from {
         background-position: 0px 0px;
     }
+
     to {
         background-position: -800px 0px;
     }
 }
+
 /*end spritesheet section*/
 
 section {
@@ -147,7 +150,9 @@ li a {
     padding: 0;
     color: var(--unvisited);
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 li a:hover {
@@ -168,3 +173,30 @@ footer a {
 footer a:hover {
     color: var(--text);
 }
+
+/* Class 14 | Step 2: put the cards in a row */
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+}
+
+.card {
+    flex: 1;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.card a {
+    color: var(--hover)
+}
+
+@media (min-width: 40rem) {
+    .cards {
+        flex-direction: row;
+        padding: 1px;
+    }
+}
+
+/* end cards*/
