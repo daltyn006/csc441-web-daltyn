@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Daltyn Landas</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>About • Daltyn</title>
     <!-- Class 12 | Step 1: a typeface I choose-->
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.google.com">
@@ -12,21 +12,37 @@
 </head>
 
 <body>
+    <!-- Lab 12 | Task 1: Current page-->
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="current">Home</a>
+            </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+                <a href="roadmap.html">Roadmap</a>
+            </li>
+        </ul>
+    </nav>
 
     <!-- Class 11 | Step 2: The Page -->
     <header>
         <!--Class 12 | Step 3: an image-->
-        <img src="./assets/me.jpg" alt="an image of myself" class="art-left" class="art-left">
+        <img src="./assets/art/photography/me.jpg" alt="an image of myself" class="art-left" class="art-left">
         <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
         <div class="content">
             <h1>Daltyn Landas</h1>
-            <h3>D. B. Loonborne</h3>
             <p>Computer Science student at Le Moyne College.</p>
         </div>
         <label class="spritesheet_container">
             <input type="checkbox" class="pixel-art-right-toggle">
             <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
-                <img src="./assets/default_graphic/default_spritesheet.png" alt="A small fellow waving."
+                <img src="./assets/animations/default_spritesheet.png" alt="A small fellow waving."
                     class="sprite-right-only">
             </div>
         </label>
@@ -64,39 +80,6 @@
                 <li>Doing things before they're asked, or branching tasks from distractions.</li>
                 <li>Tying knots in everything.</li>
                 <li>Figuring out ways to complicate easy things, and simplify complex things.</li>
-            </ul>
-        </section>
-
-        <!--Lab 11 | Task 3: public works-->
-        <section>
-            <h2>What I've built</h2>
-            <ul>
-                <li>
-                    <a href="https://github.com/daltyn006/csc441-android-daltyn.git" target="_blank"
-                        rel="noopener noreferrer">
-                        A simple Android app in Kotlin and Jetpack Compose.
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/daltyn006/voice-mail.git" target="_blank" rel="noopener noreferrer">
-                        An in-progress application for lazy students.
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/daltyn006/Ratiocentra/tree/main/Main%20Plotline%20(First%20Edition)"
-                        target="_blank" rel="noopener noreferrer">
-                        An in-progress novel.
-                    </a>
-
-                </li>
-                <li>
-                    <a href="https://github.com/daltyn006/Ratiocentra/tree/main/Rough%20Drafts" target="_blank"
-                        rel="noopener noreferrer">
-                        A couple short stories from the past.
-                    </a>
-                </li>
             </ul>
         </section>
     </main>
