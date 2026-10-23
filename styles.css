@@ -51,6 +51,7 @@ nav ul {
         gap: 1.5rem;
     }
 }
+
 /*end nav ul switch*/
 
 header {
@@ -175,12 +176,18 @@ li a {
 li a:hover {
     color: var(--hover);
 }
-
+/*Lab 14 | Task 4: footer stacks on narrow screens*/
 footer {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding-top: 1.5rem;
     font-size: small;
     border-top: 1px solid var(--border);
 }
+
 
 footer a {
     color: var(--text-muted);
@@ -217,6 +224,11 @@ footer a:hover {
     .cards {
         flex-direction: row;
         padding: 1px;
+    }
+    /*Lab 14 | Task 4: footer stacks on narrow screens*/
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
