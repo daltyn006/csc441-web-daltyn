@@ -35,6 +35,23 @@ nav a.current {
 }
 
 /* end page selector */
+/* Lab 14 | Task 1: the nav stacks for narrow */
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 40rem) {
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+/*end nav ul switch*/
 
 header {
     display: flex;
@@ -177,6 +194,8 @@ footer a:hover {
 /* Class 14 | Step 2: put the cards in a row */
 .cards {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     flex-direction: column;
     gap: 1.5px;
 }
@@ -189,8 +208,10 @@ footer a:hover {
 }
 
 .card a {
-    color: var(--hover)
+    color: var(--text);
+    text-decoration: none;
 }
+
 
 @media (min-width: 40rem) {
     .cards {
