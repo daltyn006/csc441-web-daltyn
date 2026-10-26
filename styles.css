@@ -22,14 +22,10 @@ body {
 }
 
 /* Lab 13 · Task 4: page selector */
-nav a {
-    list-style: none;
-}
 
 nav a.current {
     display: inline-flex;
     border-bottom: 1px solid var(--border);
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -52,7 +48,7 @@ nav ul {
     }
 }
 
-/*end nav ul switch*/
+/*end nav UL switch*/
 
 header {
     display: flex;
@@ -69,6 +65,7 @@ header {
 .art-left {
     width: auto;
     height: 100px;
+    object-fit: cover;
     border-radius: 50%;
     flex-shrink: 1;
 }
@@ -92,7 +89,7 @@ header p {
     border-bottom: 1px solid var(--border);
 }
 
-/* Spritesheet animation rules */
+/* Sprite sheet animation rules */
 .spritesheet_container {
     display: inline-block;
 }
@@ -143,7 +140,7 @@ header p {
     }
 }
 
-/*end spritesheet section*/
+/*end sprite sheet section*/
 
 section {
     margin-bottom: 3rem;
@@ -176,6 +173,7 @@ li a {
 li a:hover {
     color: var(--hover);
 }
+
 /*Lab 14 | Task 4: footer stacks on narrow screens*/
 footer {
     margin-top: 2rem;
@@ -204,7 +202,7 @@ footer a:hover {
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    gap: 1.5px;
+    gap: 1.5rem;
 }
 
 .card {
@@ -225,6 +223,7 @@ footer a:hover {
         flex-direction: row;
         padding: 1px;
     }
+
     /*Lab 14 | Task 4: footer stacks on narrow screens*/
     footer {
         flex-direction: row;
