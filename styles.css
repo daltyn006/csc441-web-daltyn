@@ -5,6 +5,7 @@
     --name: #f1ee28;
     --accent: #c4c248;
     --background: #1a1a1a;
+    --light-backgound: #FFFFFF;
     --border: #c5a059;
     --unvisited: #e6ca65;
     --hover: #796126;
@@ -260,4 +261,16 @@ footer a:hover {
 }
 
 /* end cards*/
+body.light {
+    --text: black;
+    --text-muted: cyan;
+    --large-text: blue;
+    --name: #00000139;
+    --accent: gold;
+    --background: white;
+    --border: orange;
+    --unvisited: dimgray;
+    --hover: navy;
+}
+
 
