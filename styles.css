@@ -21,20 +21,36 @@ body {
     padding: 2rem;
 }
 
+
+
 /* Lab 13 · Task 4: page selector */
-nav a {
-    list-style: none;
-}
 
 nav a.current {
     display: inline-flex;
     border-bottom: 1px solid var(--border);
-    list-style: none;
     margin: 0;
     padding: 0;
 }
 
 /* end page selector */
+/* Lab 14 | Task 1: the nav stacks for narrow */
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 40rem) {
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+/*end nav UL switch*/
 
 header {
     display: flex;
@@ -51,6 +67,7 @@ header {
 .art-left {
     width: auto;
     height: 100px;
+    object-fit: cover;
     border-radius: 50%;
     flex-shrink: 1;
 }
@@ -74,7 +91,7 @@ header p {
     border-bottom: 1px solid var(--border);
 }
 
-/* Spritesheet animation rules */
+/* Sprite sheet animation rules */
 .spritesheet_container {
     display: inline-block;
 }
@@ -125,7 +142,7 @@ header p {
     }
 }
 
-/*end spritesheet section*/
+/*end sprite sheet section*/
 
 section {
     margin-bottom: 3rem;
@@ -159,11 +176,18 @@ li a:hover {
     color: var(--hover);
 }
 
+/*Lab 14 | Task 4: footer stacks on narrow screens*/
 footer {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding-top: 1.5rem;
     font-size: small;
     border-top: 1px solid var(--border);
 }
+
 
 footer a {
     color: var(--text-muted);
@@ -175,21 +199,51 @@ footer a:hover {
 }
 
 /* Class 14 | Step 2: put the cards in a row */
+
 .cards {
     display: flex;
-    flex-direction: column;
-    gap: 1.5px;
+    flex-wrap: wrap; 
+    gap: 1.5rem;     
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card {
-    flex: 1;
+    flex: 1 1 220px; 
+    box-sizing: border-box;
     padding: 1.5rem;
     border: 1px solid var(--border);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .card a {
-    color: var(--hover)
+    color: var(--unvisited);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card a:hover {
+    color: var(--hover);
+    text-decoration: underline;
+}
+
+.card p {
+    color: var(--text);
+    margin: 0.5rem 0 0 0;
+    line-height: 1.6;
+}
+
+/* Lab 14 | Task 6: one layout of my own */
+
+.card img {
+    width: 100%;       
+    height: auto;     
+    object-fit: cover; 
+    display: block;    
+    border-radius: 4px;
 }
 
 @media (min-width: 40rem) {
@@ -197,6 +251,13 @@ footer a:hover {
         flex-direction: row;
         padding: 1px;
     }
+
+    /*Lab 14 | Task 4: footer stacks on narrow screens*/
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 /* end cards*/
+
