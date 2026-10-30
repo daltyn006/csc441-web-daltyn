@@ -55,9 +55,9 @@ dropdownButtons.forEach(button => {
             
             // Swap arrow text between v (open) and > (closed)
             if (targetContent.classList.contains("hidden")) {
-                this.textContent = ">";
-            } else {
                 this.textContent = "v";
+            } else {
+                this.textContent = ">";
             }
         } else {
             console.log("ERROR: No content found below this header to toggle!");
