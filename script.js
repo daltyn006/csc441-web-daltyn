@@ -19,14 +19,14 @@ if (themeButton) {
         document.body.classList.add("light");
         themeButton.textContent = "Light Mode";
     } else {
-        document.body.classList.remove("light"); 
-        themeButton.textContent = "Light Mode"; 
+        document.body.classList.remove("light");
+        themeButton.textContent = "Light Mode";
     }
 
     // Lab 15 · Task 3 and 4: the label swaps
     themeButton.addEventListener("click", function () {
         document.body.classList.toggle("light");
-        
+
         if (document.body.classList.contains("light")) {
             console.log("Info: set light theme")
             themeButton.textContent = "Dark Mode";
@@ -49,10 +49,10 @@ dropdownButtons.forEach(button => {
         // show the div class around the header to java
         const header = this.closest(".align-header");
         const targetContent = header.nextElementSibling;
-        
+
         if (targetContent) {
             targetContent.classList.toggle("hidden");
-            
+
             // Swap arrow text between v (open) and > (closed)
             if (targetContent.classList.contains("hidden")) {
                 this.textContent = "v";
@@ -64,3 +64,17 @@ dropdownButtons.forEach(button => {
         }
     });
 });
+
+// Class 16 | Step 4: handle the submit.
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.querySelector("#name").value;
+        formStatus.textContent = "Thank you." + name + " Your message is ready to send."
+        contactForm.requestFullscreen;
+    });
+}

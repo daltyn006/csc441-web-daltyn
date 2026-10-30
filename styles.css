@@ -21,12 +21,25 @@ body {
     margin: 0 auto;
     padding: 2rem;
 }
+/* Class 16 | Step 3: padding counts inside width not on top of it */
+
+* {
+    /* tightens page */
+    box-sizing: border-box;
+}
+
+
 
 button {
     color: var(--large-text);
     background-color: var(--background);
     border-color: blanchedalmond;
+}
 
+button:hover {
+    color: var(--hover);
+    background-color: var(--background);
+    border-color: blanchedalmond;
 }
 
 /* Lab 13 · Task 4: page selector */
@@ -296,7 +309,7 @@ footer a:hover {
 /* end cards*/
 body.light {
     --text: black;
-    --text-muted: darkblue;
+    --text-muted: rgb(137, 137, 211);
     /* A beautiful hot pink */
     --large-text: #ff00dd;
     --name: #700824;
@@ -306,4 +319,56 @@ body.light {
     --unvisited: black;
     /* A nice puke green */
     --hover: rgb(88, 152, 100); 
+}
+
+/* Class 16 | Step something: the form */
+
+form label {
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 0.25rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+form input, form textarea {
+    font: inherit;
+    width: 80%;
+    padding: 0.5rem;
+    border: var(--border) 1px solid;
+    background-color: var(--text-muted);
+    color: var(--accent);
+}
+
+form input:focus, form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+form button {
+    font: inherit;
+    font-weight: bold;
+    color: var(--large-text);
+    background-color: var(--background);
+    border-color: blanchedalmond;
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    font: inherit;
+    font-weight: bolder;
+    color: var(--name);
+    background-color: var(--background);
+    border-color: blanchedalmond;
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+#form-status {
+    font: inherit;
+    font-weight: bold;
+    color: var(--accent)
 }

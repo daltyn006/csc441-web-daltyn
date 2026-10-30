@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <!-- Class 16 | Step 1: My contact page -->
+    <title>Contact • Daltyn</title>
+    <!-- Class 12 | Step 1: a typeface I choose-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Lab 12 | Task 1: Current page-->
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <!-- Class 16 | Step 1: add contact page. -->
+            <li>
+                <a href="contact.html" class="current">Contact Me</a>
+            </li>
+            <!-- Class 15 Step 3 the time button -->
+            <li><button id="toggle-theme" type="button"></button></li>
+        </ul>
+
+    </nav>
+
+    <!-- Class 11 | Step 2: The Page -->
+    <header>
+        <!--Class 12 | Step 3: an image-->
+        <img src="./assets/art/photography/me.jpg" alt="an image of myself" class="art-left" class="art-left">
+        <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
+        <div class="content">
+            <h1>Contact: Daltyn Landas</h1>
+        </div>
+        <label class="spritesheet_container">
+            <input type="checkbox" class="pixel-art-right-toggle">
+            <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
+                <img src="./assets/animations/default_spritesheet.png" alt="A small fellow waving."
+                    class="sprite-right-only">
+            </div>
+        </label>
+    </header>
+    <main>
+        <section>
+            <!-- Class 16 | Step 2: a form -->
+            <form id="contact-form">
+                <p>
+                    Your Name:
+                    <label for="name">
+
+                        <input id="text" name="text" type="text" required>
+                    </label>
+                </p>
+                <p>
+                    Content:
+                    <label>
+
+                        <textarea id="messsage" name="message" rows="5" required></textarea>
+                    </label>
+                </p>
+                <p>
+                    Your Email Address:
+                    <label for="email">
+                        <input id="email" name="email" type="email" required>
+                    </label>
+                </p>
+
+                <button type="submit">
+                    Send Email
+                </button>
+            </form>
+        </section>
+
+        <p id="form-status" role="status">
+
+        </p>
+        </section>
+        <section>
+            <h1>General Messaging</h1>
+        </section>
+    </main>
+    <footer>
+        <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
+            <!-- Class 15 | Step 2: The year writen by JavaScript -->
+            &copy; <span id="year"></span> Daltyn Landas.
+        </a>
+    </footer>
+</body>
+
+</html>
