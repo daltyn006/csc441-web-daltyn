@@ -5,6 +5,7 @@
     --name: #f1ee28;
     --accent: #c4c248;
     --background: #1a1a1a;
+    --light-backgound: #FFFFFF;
     --border: #c5a059;
     --unvisited: #e6ca65;
     --hover: #796126;
@@ -21,7 +22,12 @@ body {
     padding: 2rem;
 }
 
+button {
+    color: var(--large-text);
+    background-color: var(--background);
+    border-color: blanchedalmond;
 
+}
 
 /* Lab 13 · Task 4: page selector */
 
@@ -202,14 +208,14 @@ footer a:hover {
 
 .cards {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 1.5rem;     
+    flex-wrap: wrap;
+    gap: 1.5rem;
     width: 100%;
     box-sizing: border-box;
 }
 
 .card {
-    flex: 1 1 220px; 
+    flex: 1 1 220px;
     box-sizing: border-box;
     padding: 1.5rem;
     border: 1px solid var(--border);
@@ -239,10 +245,10 @@ footer a:hover {
 /* Lab 14 | Task 6: one layout of my own */
 
 .card img {
-    width: 100%;       
-    height: auto;     
-    object-fit: cover; 
-    display: block;    
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
     border-radius: 4px;
 }
 
@@ -259,5 +265,45 @@ footer a:hover {
     }
 }
 
-/* end cards*/
+/*dropdown*/
 
+.align-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.dropdown {
+    color: var(--text);
+    background: none;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    color: var(--hover);
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/*end dropdown*/
+
+/* end cards*/
+body.light {
+    --text: black;
+    --text-muted: darkblue;
+    /* A beautiful hot pink */
+    --large-text: #ff00dd;
+    --name: #700824;
+    --accent: rgb(67, 58, 5);
+    --background: rgb(215, 209, 200);
+    --border: orange;
+    --unvisited: black;
+    /* A nice puke green */
+    --hover: rgb(88, 152, 100); 
+}

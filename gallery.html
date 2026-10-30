@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.google.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- Lab 15 | Task 1: add js -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,13 +28,17 @@
             <li>
                 <a href="gallery.html" class="current">Gallery</a>
             </li>
+            <!-- Lab 15 | Task 1: add the button -->
+            <li>
+                <button id="toggle-theme" type="button"></button>
+            </li>
         </ul>
     </nav>
 
     <header>
         <!-- Lab 13 | Task 2: My own page-->
         <div class="content">
-            <h1>Daltyn • Gallery</h1>
+            <h1>Gallery</h1>
         </div>
         <label class="spritesheet_container">
             <input type="checkbox" class="pixel-art-right-toggle">
@@ -41,14 +48,20 @@
             </div>
         </label>
     </header>
-    <main>
 
+    <main>
         <!--Lab 14 | Task 3: cards on my page-->
         <section>
-            <h2>Drawings</h2>
+            <div class="align-header">
+                <h2>Drawings</h2>
+            </div>
 
-            <div class="category-group">
-                <h3>Digital</h3>
+            <div class="cards">
+                <div class="align-header">
+                    <h3>Digital</h3>
+                     <!-- Lab 15 | Task 5: hide sections -->
+                    <button type="button" id="dropdown" class="dropdown">&gt;</button>
+                </div>
                 <div class="cards">
                     <div class="card">
                         <img src="assets/art/drawings/online/workstudy.png" alt="A student">
@@ -57,10 +70,20 @@
             </div>
 
             <div class="category-group">
-                <h3>Hand</h3>
+                <div class="align-header">
+                    <h3>Hand</h3>
+                    <!-- Lab 15 | Task 5: hide sections -->
+                    <span><button type="button" id="dropdown" class="dropdown">&gt;</button></span>
+                </div>
                 <p>These images need to be scanned or photographed</p>
             </div>
-            <h2>Photographs</h2>
+
+            <div class="align-header">
+                <h2>Photographs</h2>
+                <!-- Lab 15 | Task 5: hide sections -->
+                <button type="button" class="dropdown">&gt;</button>
+            </div>
+
             <div class="cards">
                 <!--Lab 14 | Task 3: cards on my page-->
                 <section class="card">
@@ -78,9 +101,11 @@
                 <section class="card">
                     <img src="assets/art/photography/dynamic.jpg" alt="Epic skies">
                 </section>
-                <section class="card">
-                    <img src="assets/art/photography/flowers.jpg" alt="Some dead flowers">
-                </section>
+                <div>
+                    <section class="card">
+                        <img src="assets/art/photography/flowers.jpg" alt="Some dead flowers">
+                    </section>
+                </div>
                 <section class="card">
                     <img src="assets/art/photography/hat.jpg" alt="Hat on bleachers">
                 </section>
@@ -91,12 +116,12 @@
                     <img src="assets/art/photography/rocks.jpg" alt="A bunch of rocks">
                 </section>
             </div>
-
+        </section> 
     </main>
 
     <footer>
         <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
-            <p>©2026 Daltyn Landas.</p>
+            <p>&copy; <span id="year"></span> Daltyn Landas.</p>
         </a>
     </footer>
 </body>

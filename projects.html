@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.google.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <!-- Lab 15 | Task 1: add js -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,13 +28,17 @@
             <li>
                 <a href="gallery.html">Gallery</a>
             </li>
+            <!-- Lab 15 | Task 1: add theme button -->
+             <li>
+                <button id="toggle-theme" type="button"></button>
+             </li>
         </ul>
     </nav>
 
     <header>
         <div class="content">
             <!--Class 12 | Step one: second page. -->
-            <h1>Projects • Daltyn Landas</h1>
+            <h1>Daltyn Landas</h1>
             <p>Some of these links are broken due to required privacy</p>
         </div>
         <label class="spritesheet_container">
@@ -73,7 +80,7 @@
                     language models to summarize, in variable depths, different lectures, presentations,
                     and documents for the person to understand the gist without excess linguistics.
                     Difficulties come from the size of the program and the lack of knowledge of C++ and
-                    Rust. While it compiles it's heavily dependent on certain computers currently.
+                    Rust. While it compiles it's dependent on certain computers currently.
                 </a>
 
             </section>
@@ -125,7 +132,8 @@
 
     <footer>
         <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
-            <p>©2026 Daltyn Landas.</p>
+            <!-- Lab 15 | Task 1: connect to javascript -->
+            <p>&copy; <span id="year"></span> Daltyn Landas.</p>
         </a>
     </footer>
 </body>
