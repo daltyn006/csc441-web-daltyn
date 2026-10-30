@@ -44,37 +44,41 @@ if (themeButton) {
 // Lab 15 · Task 5: Toggle collapsible sections using buttons
 const dropdownButtons = document.querySelectorAll(".dropdown");
 
-dropdownButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        // show the div class around the header to java
-        const header = this.closest(".align-header");
-        const targetContent = header.nextElementSibling;
+if (dropdownButtons) {
+    dropdownButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // show the div class around the header to java
+            const header = this.closest(".align-header");
+            const targetContent = header.nextElementSibling;
 
-        if (targetContent) {
-            targetContent.classList.toggle("hidden");
+            if (targetContent) {
+                targetContent.classList.toggle("hidden");
 
-            // Swap arrow text between v (open) and > (closed)
-            if (targetContent.classList.contains("hidden")) {
-                this.textContent = "v";
+                // Swap arrow text between v (open) and > (closed)
+                if (targetContent.classList.contains("hidden")) {
+                    this.textContent = "v";
+                } else {
+                    this.textContent = ">";
+                }
             } else {
-                this.textContent = ">";
+                console.log("ERROR: No content found below this header to toggle!");
             }
-        } else {
-            console.log("ERROR: No content found below this header to toggle!");
-        }
+        });
     });
-});
+}
+
 
 // Class 16 | Step 4: handle the submit.
 const contactForm = document.querySelector("#contact-form");
-const formStatus = document.querySelector("#form-status");
 
 if (contactForm) {
+    const formStatus = document.querySelector("#form-status");
+
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const name = document.querySelector("#name").value;
-        formStatus.textContent = "Thank you." + name + " Your message is ready to send."
-        contactForm.requestFullscreen;
+        const name = document.querySelector("#text").value;
+        formStatus.textContent = "Thank you." + name + ". Your message is sent."
+        contactForm.remove();
     });
 }
