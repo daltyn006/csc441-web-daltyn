@@ -1,45 +1,64 @@
 // Class 15 | Step 1: this file is running.
-console.log("Info: JS is running");
+console.log("Info: load javascript");
 
-console.log("Info: get year for copyright")
 
 // Class 15 | Step 2: put this year in the footer.
 // Lab 15 | Step 2: add a try catch.
 const yearSpan = document.querySelector("#year");
 if (yearSpan) {
+    console.log("Info: get year for copyright")
     yearSpan.textContent = new Date().getFullYear();
 }
 
+
 // Class 15 | Step 3: a button that changes the page
 const themeButton = document.querySelector("#toggle-theme");
-
 if (themeButton) {
-    // Lab 15 · Task 4: use the saved choice on arrival
-    if (localStorage.getItem("theme") === "light") {
-        document.body.classList.add("light");
-        themeButton.textContent = "Light Mode";
-    } else {
-        document.body.classList.remove("light");
-        themeButton.textContent = "Light Mode";
-    }
+    // Detect the browser's active OS preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const systemTheme = prefersDark ? 'dark' : 'light';
 
-    // Lab 15 · Task 3 and 4: the label swaps
-    themeButton.addEventListener("click", function () {
-        document.body.classList.toggle("light");
+    // Use "default" instead of "" in the themes array and filter condition
+    let themes = ["default", "light", "dark", "cyber", "gruvbox"].filter(theme => {
+        return theme === "default" || theme !== systemTheme;
+    });
 
-        if (document.body.classList.contains("light")) {
-            console.log("Info: set light theme")
-            themeButton.textContent = "Dark Mode";
-            localStorage.setItem("theme", "light");
+    const labels = {
+        "default": `System (${systemTheme.charAt(0).toUpperCase() + systemTheme.slice(1)})`,
+        "light": "Light Mode",
+        "dark": "Dark Mode",
+        "cyber": "Cyber",
+        "gruvbox": "Gruvbox"
+    };
+
+    let currentTheme = localStorage.getItem("theme") || "default";
+    let index = themes.includes(currentTheme) ? themes.indexOf(currentTheme) : 0;
+
+    function applyTheme(theme) {
+        console.log(`Info: apply ${theme} theme to page.`);
+        
+        // If it's "default", remove the attribute; otherwise, set it to the theme name
+        if (theme && theme !== "default") {
+            document.documentElement.setAttribute("theme", theme);
         } else {
-            console.log("Info: set dark theme")
-            themeButton.textContent = "Light Mode";
-            localStorage.setItem("theme", "dark");
+            document.documentElement.removeAttribute("theme");
         }
+
+        localStorage.setItem("theme", theme);
+        themeButton.textContent = `Theme: ${labels[theme]}`;
+    }
+    
+    applyTheme(currentTheme);
+    
+    themeButton.addEventListener("click", () => {
+        index = (index + 1) % themes.length;
+        applyTheme(themes[index]);
     });
 } else {
-    console.log("ERROR: button failed to set");
+    console.log("ERROR: button failed to set.");
 }
+
+
 
 // Lab 15 · Task 5: Toggle collapsible sections using buttons
 const dropdownButtons = document.querySelectorAll(".dropdown");
@@ -47,38 +66,69 @@ const dropdownButtons = document.querySelectorAll(".dropdown");
 if (dropdownButtons) {
     dropdownButtons.forEach(button => {
         button.addEventListener("click", function () {
-            // show the div class around the header to java
+            console.log("Info: dropdown switch called.");
             const header = this.closest(".align-header");
             const targetContent = header.nextElementSibling;
 
             if (targetContent) {
                 targetContent.classList.toggle("hidden");
 
-                // Swap arrow text between v (open) and > (closed)
+                // Swap arrow text between > (open) and v (closed)
                 if (targetContent.classList.contains("hidden")) {
                     this.textContent = "v";
                 } else {
                     this.textContent = ">";
-                }
+                };
             } else {
-                console.log("ERROR: No content found below this header to toggle!");
-            }
+                console.log("ERROR: dropdown switch failed");
+            };
         });
     });
-}
+};
+
 
 
 // Class 16 | Step 4: handle the submit.
 const contactForm = document.querySelector("#contact-form");
 
 if (contactForm) {
-    const formStatus = document.querySelector("#form-status");
 
-    contactForm.addEventListener("submit", function(event) {
+    // Lab 16 | Task 1: my own check. 
+    const repeatingChars = /([a-zA-Z ])\1{4,}/;
+    formStatus = document.querySelector("#form-status")
+    contactForm.addEventListener("submit", function (event) {
+        console.log("Info: message requested.")
         event.preventDefault();
 
-        const name = document.querySelector("#text").value;
-        formStatus.textContent = "Thank you." + name + ". Your message is sent."
-        contactForm.remove();
+
+        const name = document.querySelector("#name").value;
+        const message = document.querySelector("#message").value;
+
+        if (!message || message?.length < 30) {
+            console.log("Info: message null or too short.");
+            formStatus.textContent = "Extend Message!";
+            formStatus.classList.add("Error");
+            return;
+        } else if (repeatingChars.test(message)) {
+            console.log("Info: Gibberish detected, stop being stupid.");
+            formStatus.textContent = "Remove duplicate artifacts."
+            formStatus.classList.add("Error");
+            setTimeout(() => {
+                formStatus.textContent = ""
+            }, 5000);
+
+            return;
+
+    } else {
+    console.log("Info: message sent successfully.");
+    formStatus.textContent = "Thank you, " + name + ". Your message is sent.";
+    // Lab 16 | Task 3: remove the error.
+    formStatus.classList.remove("Error");
+};
+contactForm.reset();
+// Clear the message after a set time from sending.
+setTimeout(() => {
+    formStatus.textContent = "";
+}, 5000);
     });
-}
+};
