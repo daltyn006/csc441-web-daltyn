@@ -28,6 +28,10 @@
             <li>
                 <a href="gallery.html" class="current">Gallery</a>
             </li>
+            <!-- Class 16 | Step 1: contact link. -->
+            <li>
+                <a href="contact.html">Contact Me</a>
+            </li>
             <!-- Lab 15 | Task 1: add the button -->
             <li>
                 <button id="toggle-theme" type="button"></button>
@@ -50,42 +54,56 @@
     </header>
 
     <main>
-        <!--Lab 14 | Task 3: cards on my page-->
+        <!-- Lab 14 | Task 3: cards on my page -->
         <section>
+
+            <!-- Main Section Title -->
             <div class="align-header">
                 <h2>Drawings</h2>
             </div>
 
-            <div class="cards">
+            <div class="category-group">
                 <div class="align-header">
-                    <h3>Digital</h3>
-                     <!-- Lab 15 | Task 5: hide sections -->
-                    <button type="button" id="dropdown" class="dropdown">&gt;</button>
+                    <!-- Lab 15 | Task 5: hide sections -->
+                    <button type="button" class="dropdown">&gt;</button>
+                    <h3>Hand</h3>
                 </div>
                 <div class="cards">
                     <div class="card">
-                        <img src="assets/art/drawings/online/workstudy.png" alt="A student">
+                        <img src="assets/art/drawings/online/workstudy.png" alt="A student studyking">
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="align-header">
+                    <!-- Lab 15 | Task 5: hide sections -->
+                    <button type="button" class="dropdown">&gt;</button>
+                    <h3>Digital</h3>
+                </div>
+                
+                <!-- The cards container sits safely below the header -->
+                <div class="cards">
+                    <div class="card">
+                        <img src="assets/art/drawings/online/swords.png" alt="computer generated image of two broadswords clashing...">
+                    </div>
+                    <div class="card">
+                        <img src="assets/art/drawings/online/foxy.png" alt="computer generated image of a fluffy fox...">
+                    </div>
+                    <div class="card">
+                        <img src="assets/art/drawings/online/big_dome.png" alt="computer generated image of a glass bust...">
                     </div>
                 </div>
             </div>
 
-            <div class="category-group">
-                <div class="align-header">
-                    <h3>Hand</h3>
-                    <!-- Lab 15 | Task 5: hide sections -->
-                    <span><button type="button" id="dropdown" class="dropdown">&gt;</button></span>
-                </div>
-                <p>These images need to be scanned or photographed</p>
-            </div>
-
             <div class="align-header">
-                <h2>Photographs</h2>
                 <!-- Lab 15 | Task 5: hide sections -->
                 <button type="button" class="dropdown">&gt;</button>
+                <h2>Photographs</h2>
             </div>
 
             <div class="cards">
-                <!--Lab 14 | Task 3: cards on my page-->
+                <!-- Lab 14 | Task 3: cards on my page -->
                 <section class="card">
                     <img src="assets/art/photography/duck.jpg" alt="A duck">
                 </section>
@@ -116,7 +134,7 @@
                     <img src="assets/art/photography/rocks.jpg" alt="A bunch of rocks">
                 </section>
             </div>
-        </section> 
+        </section>
     </main>
 
     <footer>
