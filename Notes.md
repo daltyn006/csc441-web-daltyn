@@ -25,3 +25,6 @@ the data to a server and load whatever comes back. You do not have a server, so 
 3. I added a duplicate text detector so that bots can't spam random letters at me, I might add a restriction on how often messages can be sent as well. I used reused what was on my kotlin project but simplified.
 4. It still looks fine to me, nothing overflows, nothing looks bad in dark mode at least. 
 5. I think that a. the link to my address/server is missing b. the function call to send the email to my address c. the people to send me the email.
+
+## Week 11 
+live site: https://daltynlandas.netlify.app/
