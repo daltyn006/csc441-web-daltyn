@@ -122,27 +122,25 @@
 
 /* A box that gruvs */
 :root[theme="gruvbox"] {
-    --background: darkslategray;
-    --text: wheat;
-    --text-muted: rosybrown;
-    --title-name: goldenrod;
-    --subtitle: peru;
-    --section-title: indianred;
-    --accent: olivedrab;
-    --border: dimgray;
+    --background: #282828;
+    --text: #ebdbb2;
+    --text-muted: #a89984;
+    --title-name: #fabd2f;
+    --subtitle: #d79921;
+    --section-title: #fb4934;
+    --accent: #b8bb26;
+    --border: #7c6f64;
 
-    --error: indianred;
-    --link: cadetblue;
-    --link-hover: darkseagreen;
-    --button-text: goldenrod;
-    --button-hover: olivedrab;
-    --button-border: dimgray;
+    --error: #cc241d;
+    --link: #83a598;
+    --link-hover: #b8bb26;
+    --button-text: #fabd2f;
+    --button-hover: #b8bb26;
+    --button-border: #7c6f64;
 
-    --footer-link: rosybrown;
-    --footer-link-hover: wheat;
+    --footer-link: #d5c4a1;
+    --footer-link-hover: #fbf1c7;
 }
-
-/* 3. GLOBAL RESETS & BASE STYLES */
 
 /* Class 16 | Step 3: padding counts inside width not on top of it */
 * {
@@ -212,7 +210,6 @@ button:hover {
     display: none !important;
 }
 
-/* 4. HEADER & NAVIGATION */
 
 header {
     display: flex;
@@ -298,7 +295,6 @@ nav a.current {
 
 /* end dropdown */
 
-/* 5. CARDS COMPONENT */
 
 /* Class 14 | Step 2: put the cards in a row */
 .cards {
@@ -351,10 +347,7 @@ nav a.current {
     padding: 1rem;
     background: var(--background);
 }
-
 /* end cards*/
-
-/* 6. FORM STYLES */
 
 /* Class 16 | Step something: the form */
 form label {
@@ -409,7 +402,6 @@ form button:hover {
     color: var(--text);
 }
 
-/* 7. SPRITESHEET ANIMATIONS */
 
 /* Sprite sheet animation rules */
 .spritesheet_container {
@@ -462,7 +454,6 @@ form button:hover {
 
 /*end sprite sheet section*/
 
-/* 8. FOOTER */
 
 /* Lab 14 | Task 4: footer stacks on narrow screens */
 footer {
