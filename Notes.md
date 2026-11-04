@@ -25,3 +25,11 @@ the data to a server and load whatever comes back. You do not have a server, so 
 3. I added a duplicate text detector so that bots can't spam random letters at me, I might add a restriction on how often messages can be sent as well. I used reused what was on my kotlin project but simplified.
 4. It still looks fine to me, nothing overflows, nothing looks bad in dark mode at least. 
 5. I think that a. the link to my address/server is missing b. the function call to send the email to my address c. the people to send me the email.
+
+## Week 11 
+live site: https://daltynlandas.netlify.app/
+
+1. Github hosts the files that netlify uses on the web, so github is the remote server that netlify pulls from to use its dns to resolve.
+2. The webpage will not change because we are not hosting the development page, we are hosting the release. 
+3. The padlock means that this has an https connection instead of an unstable http. One difference between the protocols used on the web and local on machine. 
+4. I would hand a stranger my images on a piece of paper. I do not have my email address attached to this, phone number, credit card number, SSN, or passwords/login info, so I think I am safe. After the class I will be deleting the screenshots.
