@@ -90,6 +90,7 @@ if (contactForm) {
 
     // Lab 16 | Task 1: my own check. 
     const repeatingChars = /([a-zA-Z ])\1{4,}/;
+
     formStatus = document.querySelector("#form-status");
     contactForm.addEventListener("submit", function (event) {
         console.log("Info: message requested.");
@@ -99,7 +100,7 @@ if (contactForm) {
         const name = document.querySelector("#name").value;
         const message = document.querySelector("#message").value;
 
-        if (!message || message?.length < 30) {
+        if (!message || message?.length < 10) {
             console.log("Info: message null or too short.");
             formStatus.textContent = "Extend Message!";
             formStatus.classList.add("Error");
