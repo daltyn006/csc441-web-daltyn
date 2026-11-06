@@ -90,35 +90,41 @@ if (contactForm) {
 
     // Lab 16 | Task 1: my own check. 
     const repeatingChars = /([a-zA-Z ])\1{4,}/;
-    formStatus = document.querySelector("#form-status")
+
+    formStatus = document.querySelector("#form-status");
     contactForm.addEventListener("submit", function (event) {
-        console.log("Info: message requested.")
+        console.log("Info: message requested.");
         event.preventDefault();
 
 
         const name = document.querySelector("#name").value;
         const message = document.querySelector("#message").value;
 
-        if (!message || message?.length < 30) {
+        if (!message || message?.length < 10) {
             console.log("Info: message null or too short.");
             formStatus.textContent = "Extend Message!";
             formStatus.classList.add("Error");
             return;
         } else if (repeatingChars.test(message)) {
             console.log("Info: Gibberish detected, stop being stupid.");
-            formStatus.textContent = "Remove duplicate artifacts."
+            formStatus.textContent = "Remove duplicate artifacts.";
             formStatus.classList.add("Error");
             setTimeout(() => {
-                formStatus.textContent = ""
+                formStatus.textContent = "";
             }, 5000);
 
             return;
 
         } else {
+
+
             console.log("Info: message sent successfully.");
             formStatus.textContent = "Thank you, " + name + ". Your message is sent.";
             // Lab 16 | Task 3: remove the error.
             formStatus.classList.remove("Error");
+
+            // Class 18 | Step 3: Submit the form
+            formStatus.submit();
         };
         contactForm.reset();
         // Clear the message after a set time from sending.
