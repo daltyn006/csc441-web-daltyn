@@ -116,13 +116,15 @@ if (contactForm) {
             return;
 
         } else {
-            // Class 18 | Step 3: Submit the form
-            formStatus.submit();
+
 
             console.log("Info: message sent successfully.");
             formStatus.textContent = "Thank you, " + name + ". Your message is sent.";
             // Lab 16 | Task 3: remove the error.
             formStatus.classList.remove("Error");
+
+            // Class 18 | Step 3: Submit the form
+            formStatus.submit();
         };
         contactForm.reset();
         // Clear the message after a set time from sending.
