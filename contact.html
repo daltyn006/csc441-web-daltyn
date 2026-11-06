@@ -48,7 +48,7 @@
         <label class="spritesheet_container">
             <input type="checkbox" class="pixel-art-right-toggle">
             <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
-                <img src="./assets/animations/default_spritesheet.png" alt="A small fellow waving."
+                <img src="./assets/animations/default_spritesheet.avif" alt="A small fellow waving."
                     class="sprite-right-only">
             </div>
         </label>
@@ -58,7 +58,14 @@
         <h2> Message Me: </h2>
         <section>
             <!-- Class 16 | Step 2: a form -->
-            <form id="contact-form" defer>
+            <!-- Class 18 | Step 1: add a way for email to get sent -->
+            <form id="contact-form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+                <p class="hidden-field">
+                    <label>
+                        Leave this field empty; <input name="bot-field" type="text">
+                    </label>
+                </p>
+
                 <p id="form-status"></p>
                 <p>
                     Your Name:

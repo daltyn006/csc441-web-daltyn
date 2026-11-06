@@ -209,7 +209,10 @@ button:hover {
     /* Important is needed to override the current structure */
     display: none !important;
 }
-
+/* Class 18 | Step 2: formatting the hidden method */
+.hidden-class {
+    display: none !important;
+}
 
 header {
     display: flex;
@@ -415,7 +418,7 @@ form button:hover {
 .pixel-art-right {
     width: 25px;
     height: 50px;
-    background-image: url("./assets/animations/default_spritesheet.png");
+    background-image: url("./assets/animations/default_spritesheet.avif");
     background-size: 800px 50px;
     background-repeat: no-repeat;
     cursor: pointer;
