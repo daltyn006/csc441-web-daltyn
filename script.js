@@ -124,7 +124,7 @@ if (contactForm) {
             formStatus.classList.remove("Error");
 
             // Class 18 | Step 3: Submit the form
-            formStatus.submit();
+            contactForm.submit();
         };
         contactForm.reset();
         // Clear the message after a set time from sending.
