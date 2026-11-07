@@ -34,16 +34,16 @@ live site: https://daltynlandas.netlify.app/
 
 # Week 11, Friday.
 
-One problem I had was resizing the sprite sheet to a smaller size since it took me a minute to think about how to format it correctly before implementing. After the test I slowed my cpu down 20x and it still ran in under a second swap. Other than that the only problem I had was 
+Biggest problem is probably going to be figuring out SLS for the default .me address, I don't see anything about setting this up just yet. Another problem I had was resizing the sprite sheet to a smaller size since it took me a minute to think about how to format it correctly before implementing. After the test I slowed my cpu down 20x and it still ran in under a second swap. Only other problem I had was the lab PDF clipping off-screen.
 
-1. The honey-pot field is an input field hidden from human users so they never see or fill it out. It's a trap to catch automated scrapers or autofill forms before they can submit anything since if anything is submitted into the field it is instantly dismissed.
+1. The honey-pot field is an input field hidden from human users so they never see or fill it out. It's a trap to catch automated scrapers or auto-fill forms before they can submit anything since if anything is submitted into the field it is instantly dismissed.
 
-2. A deploy preview is a temporary website every time you push a branch or open a pull request. It's good to look over what the webpage will look like after netlify changes its fields in display.
+2. A deploy preview is a temporary website every time you push a branch or open a pull request. It's good to look over what the webpage will look like after Netlify changes its fields in display.
 
 3. Everything still looks alright, has enough spacing, large enough sizing, no overflow unless the user specifically zooms in on their screen, everything resizes correctly. I don't think I have any CSS widths or oversized images that force the page to scroll horizontally on narrow screens, it does not occur on my phone at least,  all containers should be fluid.
 
 4. I write and commit code locally on your laptop on a working branch. I push that branch to my remote repository on GitHub. I open a PR into main. Netlify detects this and builds a temporary Deploy Preview from your feature branch. The PR is merged into my release branch on GitHub. Netlify automatically triggers a new production build from the main branch and deploys the compiled assets globally to the public web.
 
-5. Both addresses point to the github repo. The .netlify.app subdomain is the default address assigned by Netlify. My custom domain is linked via DNS records that points traffic to Netlify's content network. When a browser requests the page, Netlify's servers receive the request, inspect the HTTP Host header to see which domain was asked for, and serve the exact same site files accordingly.
+5. Both addresses point to the Github repository, the .netlify.app subdomain is the default address assigned by Netlify. My custom domain is linked via DNS records that point traffic to Netlify's content network. When a browser requests the page, Netlify's servers receive the request, inspect the HTTP Host header to see which domain was asked for, and serve the exact same site files accordingly.
 
 6. I'd like to try to implement something like what every single site is doing with using ai on the site. I'd probably train a tiny model off of SmolLM2 or qwen2.5:0.5b to run off huggingface and pull weights to the consumer gpu for answering some questions on the site from some sort of database set into it explaining a bunch of things.
