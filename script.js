@@ -9,16 +9,30 @@ if (themeButton) {
     const systemTheme = prefersDark ? 'dark' : 'light';
 
     // Use "default" instead of "" in the themes array and filter condition
-    let themes = ["default", "light", "dark", "cyber", "gruvbox"].filter(theme => {
+    let themes = ["default", "architect", "cayman", "dark", "dinky", "gruvbox", 
+        "hacker", "leap-day", "light", "merlot", "midnight", "minima", "minimal",
+        "modernist", "slate", "tactile", "time-machine"].filter(theme => {
         return theme === "default" || theme !== systemTheme;
     });
 
     const labels = {
         "default": `System (${systemTheme.charAt(0).toUpperCase() + systemTheme.slice(1)})`,
-        "light": "Light Mode",
+        "architect": "Architect",
+        "cayman": "Cayman",
         "dark": "Dark Mode",
-        "cyber": "Cyber",
-        "gruvbox": "Gruvbox"
+        "dinky": "Dinky",
+        "gruvbox": "Gruvbox",
+        "hacker": "Hacker",
+        "leap-day": "Leap Day",
+        "light": "Light Mode",
+        "merlot": "Merlot",
+        "midnight": "Midnight",
+        "minima": "Minima",
+        "minimal": "Minimal",
+        "modernist": "Modern",
+        "slate": "Slate",
+        "tactile": "Tactile",
+        "time-machine": "Time Machine"
     };
 
     let currentTheme = localStorage.getItem("theme") || "default";
