@@ -28,6 +28,8 @@
 /* Class 15 | Step 3: a button that changes page theme */
 :root,
 :root[theme="light"] {
+    
+    
     color-scheme: light;
 
     --background: #c0c0c0;
@@ -418,6 +420,7 @@ body {
     font-family: Calibri, "Trebuchet MS", sans-serif;
     font-size: small;
     line-height: 2;
+    transition: all 0.1s ease-in-out;
     color: var(--text);
     background: var(--background);
     max-width: 800px;
@@ -667,6 +670,45 @@ form button:hover {
     font: inherit;
     font-weight: bold;
     color: var(--text);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--border);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 80%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box; 
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--border);
+    background-color: var(--background);
+    box-shadow: var(--accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 
