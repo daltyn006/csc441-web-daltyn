@@ -1,70 +1,71 @@
-/* 1. VARIABLES & THEMES */
-
-
-/* Structure: 
+/* Structure:
 :root[theme="theme"] {
 
     Main Static
-    --background: 
-    --text: 
+    --background:
+    --text:
     --text-muted:
     --title-name:
     --subtitle:
     --section-title:
-    --accent: 
+    --accent:
     --border:
 
     Interaction Based
-    --error: 
-    --link: 
-    --link-hover: 
+    --error:
+    --link:
+    --link-hover:
     --button-text:
-    --button-hover: o
+    --button-hover:
     --button-border:
 
     Footer
-    --footer-link: rosybrown;
-    --footer-link-hover: wheat;
+    --footer-link:
+    --footer-link-hover:
 }
- */
+*/
 
-/* Class 15 | Step 3: a button that changes page theme  */
+/* Class 15 | Step 3: a button that changes page theme */
 :root,
 :root[theme="light"] {
+    color-scheme: light;
+
     --background: #c0c0c0;
-    
+
     --text: #6d3e00;
-    --text-muted: #bb6a00;
-    
+    --text-muted: #6f4200;
+
     --title-name: #1a0106;
     --subtitle: #31001b;
     --section-title: #3a0011;
-    
-    --accent: #c65d3a;
+
+    --accent: #a84a2b;
     --border: #b16717;
-    
+
     /* Semantic colors */
-    --error: coral;
-    --link: #b85c38;
-    --link-hover: #e94301;
-    
-    --button-text: #d48300;
-    --button-hover: #926d30;
+    --error: #961c06;
+    --link: #7c341a;
+    --link-hover: #5f2410;
+
+    --button-text: #522c01;
+    --button-hover: #caa254;
     --button-border: #522c01;
-    
-    --footer-link: #9e4d01;
+
+    --footer-link: #7a3b00;
     --footer-link-hover: #410000;
 }
 
 /* Still default for cool users */
 @media (prefers-color-scheme: dark) {
     :root:not([theme]) {
+        color-scheme: dark;
+
         --background: black;
         --text: Bisque;
         --text-muted: rosybrown;
         --title-name: goldenrod;
         --subtitle: sandybrown;
-        --section-title: maroon;
+        --section-title: indianred;      
         --accent: darkgoldenrod;
         --border: saddlebrown;
 
@@ -72,7 +73,7 @@
         --link: cornsilk;
         --link-hover: tan;
         --button-text: antiquewhite;
-        --button-hover: gainsboro;
+        --button-hover: #3a2c1a;         
         --button-border: blanchedalmond;
 
         --footer-link: khaki;
@@ -82,12 +83,14 @@
 
 /* Explicit Manual Dark Theme for users that don't know it exists */
 :root[theme="dark"] {
+    color-scheme: dark;
+
     --background: black;
     --text: Bisque;
     --text-muted: rosybrown;
     --title-name: goldenrod;
     --subtitle: sandybrown;
-    --section-title: maroon;
+    --section-title: indianred;        
     --accent: darkgoldenrod;
     --border: saddlebrown;
 
@@ -95,7 +98,7 @@
     --link: cornsilk;
     --link-hover: tan;
     --button-text: antiquewhite;
-    --button-hover: gainsboro;
+    --button-hover: #3a2c1a;            
     --button-border: blanchedalmond;
 
     --footer-link: khaki;
@@ -104,10 +107,12 @@
 
 /* cool green cyber theme */
 :root[theme="hacker"] {
+    color-scheme: dark;
+
     --background: black;
-    --text: forestgreen;
-    --text-muted: green;
-    --title-name: darkgreen;
+    --text: #27c93f;                    
+    --text-muted: forestgreen;           
+    --title-name: lime;                 
     --subtitle: limegreen;
     --section-title: springgreen;
     --accent: olive;
@@ -117,7 +122,7 @@
     --link: seagreen;
     --link-hover: mediumseagreen;
     --button-text: lightgreen;
-    --button-hover: darkseagreen;
+    --button-hover: #0f3d0f;             
     --button-border: lime;
 
     --footer-link: mediumspringgreen;
@@ -126,6 +131,8 @@
 
 /* A box that gruvs */
 :root[theme="gruvbox"] {
+    color-scheme: dark;
+
     --background: #282828;
     --text: #ebdbb2;
     --text-muted: #a89984;
@@ -135,18 +142,20 @@
     --accent: #b8bb26;
     --border: #7c6f64;
 
-    --error: #cc241d;
+    --error: #fb5c4a;                    
     --link: #83a598;
     --link-hover: #b8bb26;
     --button-text: #fabd2f;
-    --button-hover: #b8bb26;
-    --button-border: #7c6f64;
+    --button-hover: #504945;             
+    --button-border: #928374;            
 
     --footer-link: #d5c4a1;
     --footer-link-hover: #fbf1c7;
 }
 
 :root[theme="architect"] {
+    color-scheme: dark;
+
     --background: #222222;
     --text: #eaeaea;
     --text-muted: #999999;
@@ -159,8 +168,8 @@
     --error: #ff4444;
     --link: #ffcc00;
     --link-hover: #ffffff;
-    --button-text: #222222;
-    --button-hover: #ffdd33;
+    --button-text: #ffcc00;           
+    --button-hover: #444444;             
     --button-border: #ffcc00;
 
     --footer-link: #aaaaaa;
@@ -168,48 +177,54 @@
 }
 
 :root[theme="cayman"] {
-    --background: #136a8a; 
+    color-scheme: dark;
+
+    --background: #136a8a;
     --text: #ffffff;
-    --text-muted: #b0c4de;
+    --text-muted: #dbe7f3;               
     --title-name: #ffffff;
     --subtitle: #e0f7fa;
-    --section-title: #71b280;
-    --accent: #71b280;
-    --border: #2980b9;
+    --section-title: #8fd49c;            
+    --accent: #8fd49c;                   
+    --border: #3f97cf;                   
 
-    --error: #ff5252;
-    --link: #71b280;
+    --error: #ffd9d6;                    
+    --link: #c2f0cb;                   
     --link-hover: #ffffff;
     --button-text: #ffffff;
-    --button-hover: #5a9e69;
-    --button-border: #71b280;
+    --button-hover: #174a38;            
+    --button-border: #8fd49c;            
 
-    --footer-link: #b0c4de;
-    --footer-link-hover: #71b280;
+    --footer-link: #dbe7f3;              
+    --footer-link-hover: #c2f0cb;       
 }
 
 :root[theme="dinky"] {
+    color-scheme: dark;
+
     --background: #393939;
     --text: #e6e6e6;
-    --text-muted: #999999;
+    --text-muted: #a6a6a6;               
     --title-name: #ffffff;
     --subtitle: #cccccc;
     --section-title: #ff6600;
     --accent: #ff6600;
-    --border: #555555;
+    --border: #5c5c5c;                
 
-    --error: #ff3333;
-    --link: #ff6600;
-    --link-hover: #ff8833;
+    --error: #ff8080;                  
+    --link: #ff8533;                     
+    --link-hover: #ffa366;               
     --button-text: #ffffff;
-    --button-hover: #ff8833;
+    --button-hover: #525252;            
     --button-border: #ff6600;
 
-    --footer-link: #999999;
-    --footer-link-hover: #ff6600;
+    --footer-link: #a6a6a6;              
+    --footer-link-hover: #ff8533;        
 }
 
 :root[theme="leap-day"] {
+    color-scheme: dark;
+
     --background: #2b2e39;
     --text: #e0e0e0;
     --text-muted: #8899a6;
@@ -217,41 +232,45 @@
     --subtitle: #b0c4de;
     --section-title: #2196f3;
     --accent: #2196f3;
-    --border: #3f4351;
+    --border: #4a5061;                
 
-    --error: #f44336;
-    --link: #2196f3;
+    --error: #ff6f61;                  
+    --link: #4dabf5;                    
     --link-hover: #64b5f6;
     --button-text: #ffffff;
     --button-hover: #1976d2;
     --button-border: #2196f3;
 
     --footer-link: #8899a6;
-    --footer-link-hover: #2196f3;
+    --footer-link-hover: #4dabf5;        
 }
 
 :root[theme="merlot"] {
+    color-scheme: dark;
+
     --background: #3d1f24;
     --text: #f5e6e8;
     --text-muted: #b08d93;
     --title-name: #ffffff;
     --subtitle: #e6cdd1;
-    --section-title: #d32f2f;
-    --accent: #d32f2f;
-    --border: #5c2e36;
+    --section-title: #e05252;          
+    --accent: #e05252;                  
+    --border: #7a4650;                
 
     --error: #ff5252;
     --link: #ff8a80;
     --link-hover: #ffffff;
     --button-text: #ffffff;
     --button-hover: #b71c1c;
-    --button-border: #d32f2f;
+    --button-border: #e05252;            
 
     --footer-link: #b08d93;
     --footer-link-hover: #ff8a80;
 }
 
 :root[theme="midnight"] {
+    color-scheme: dark;
+
     --background: #00151a;
     --text: #e0f7fa;
     --text-muted: #4dd0e1;
@@ -259,86 +278,68 @@
     --subtitle: #b2ebf2;
     --section-title: #00a6fc;
     --accent: #00a6fc;
-    --border: #003344;
+    --border: #10556b;                   
 
     --error: #ff1744;
     --link: #00a6fc;
     --link-hover: #40c4ff;
-    --button-text: #00151a;
-    --button-hover: #0088cc;
+    --button-text: #ffffff;              
+    --button-hover: #0077b3;             
     --button-border: #00a6fc;
 
     --footer-link: #4dd0e1;
     --footer-link-hover: #00a6fc;
 }
 
-
 :root[theme="minima"] {
+    color-scheme: light;
+
     --background: #fdfdfd;
     --text: #111111;
-    --text-muted: #828282;
+    --text-muted: #666666;               
     --title-name: #111111;
     --subtitle: #515151;
     --section-title: #2a7ae2;
     --accent: #2a7ae2;
-    --border: #e8e8e8;
+    --border: #cccccc;                  
 
     --error: #d32f2f;
-    --link: #2a7ae2;
+    --link: #1f66c4;                     
     --link-hover: #1756a9;
-    --button-text: #ffffff;
-    --button-hover: #1756a9;
+    --button-text: #000000;
+    --button-hover: #cfe3fa;             
     --button-border: #2a7ae2;
 
-    --footer-link: #828282;
-    --footer-link-hover: #2a7ae2;
+    --footer-link: #666666;             
+    --footer-link-hover: #1f66c4;        
 }
-
-:root[theme="minimal"] {
-    --background: #ffffff;
-    --text: #333333;
-    --text-muted: #999999;
-    --title-name: #000000;
-    --subtitle: #666666;
-    --section-title: #000000;
-    --accent: #000000;
-    --border: #eeeeee;
-
-    --error: #cc0000;
-    --link: #000000;
-    --link-hover: #666666;
-    --button-text: #ffffff;
-    --button-hover: #333333;
-    --button-border: #000000;
-
-    --footer-link: #999999;
-    --footer-link-hover: #000000;
-}
-
 
 :root[theme="modernist"] {
+    color-scheme: light;
+
     --background: #f9f9f9;
     --text: #222222;
-    --text-muted: #777777;
+    --text-muted: #666666;               
     --title-name: #000000;
     --subtitle: #444444;
     --section-title: #0066cc;
     --accent: #0066cc;
-    --border: #dddddd;
+    --border: #c9c9c9;                  
 
-    --error: #e91e63;
+    --error: #c2185b;                   
     --link: #0066cc;
     --link-hover: #004499;
-    --button-text: #ffffff;
-    --button-hover: #004499;
+    --button-text: #004499;              
+    --button-hover: #d6e6f7;            
     --button-border: #0066cc;
 
-    --footer-link: #777777;
+    --footer-link: #666666;             
     --footer-link-hover: #0066cc;
 }
 
-
 :root[theme="slate"] {
+    color-scheme: dark;
+
     --background: #212121;
     --text: #e0e0e0;
     --text-muted: #9e9e9e;
@@ -348,59 +349,62 @@
     --accent: #009688;
     --border: #424242;
 
-    --error: #f44336;
-    --link: #009688;
-    --link-hover: #4db6ac;
+    --error: #ff5c52;                    
+    --link: #4db6ac;                    
+    --link-hover: #80cbc4;               
     --button-text: #ffffff;
     --button-hover: #00796b;
     --button-border: #009688;
 
     --footer-link: #9e9e9e;
-    --footer-link-hover: #009688;
+    --footer-link-hover: #4db6ac;        
 }
 
 :root[theme="tactile"] {
+    color-scheme: light;
+
     --background: #f5f5f5;
     --text: #333333;
-    --text-muted: #888888;
+    --text-muted: #666666;               
     --title-name: #222222;
     --subtitle: #555555;
-    --section-title: #4caf50;
-    --accent: #4caf50;
-    --border: #e0e0e0;
+    --section-title: #2e7d32;            
+    --accent: #2e7d32;                  
+    --border: #c4c4c4;                  
 
-    --error: #f44336;
-    --link: #4caf50;
-    --link-hover: #388e3c;
-    --button-text: #ffffff;
+    --error: #c62828;                    
+    --link: #2e7d32;                    
+    --link-hover: #1b5e20;               
+    --button-text: #000000;
     --button-hover: #388e3c;
-    --button-border: #4caf50;
+    --button-border: #2e7d32;            
 
-    --footer-link: #888888;
-    --footer-link-hover: #4caf50;
+    --footer-link: #666666;              
+    --footer-link-hover: #2e7d32;       
 }
 
 :root[theme="time-machine"] {
+    color-scheme: dark;
+
     --background: #1a1a1a;
     --text: #e0e0e0;
     --text-muted: #999999;
     --title-name: #ffffff;
     --subtitle: #cccccc;
-    --section-title: #9c27b0;
-    --accent: #9c27b0;
-    --border: #333333;
+    --section-title: #ba68c8;          
+    --accent: #ba68c8;                   
+    --border: #404040;                 
 
     --error: #f44336;
     --link: #ce93d8;
     --link-hover: #ffffff;
     --button-text: #ffffff;
     --button-hover: #7b1fa2;
-    --button-border: #9c27b0;
+    --button-border: #ba68c8;            
 
     --footer-link: #999999;
     --footer-link-hover: #ce93d8;
 }
-
 /* Class 16 | Step 3: padding counts inside width not on top of it */
 * {
     box-sizing: border-box;
