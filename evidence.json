@@ -1,0 +1,5 @@
+[
+  "[{\"id\":1,\"title\":\"Photography\",\"description\":\"I like taking photos outdoors.\",\"category\":\"Creative\",\"image_url\":null,\"created_at\":\"2026-11-12T16:41:24.583108+00:00\"}, ",
+  " {\"id\":2,\"title\":\"Reading\",\"description\":\"I enjoy science fiction and mysteries.\",\"category\":\"Learning\",\"image_url\":null,\"created_at\":\"2026-11-12T16:41:24.583108+00:00\"}, ",
+  " {\"id\":3,\"title\":\"Hiking\",\"description\":\"I explore local trails on weekends.\",\"category\":\"Outdoors\",\"image_url\":null,\"created_at\":\"2026-11-12T16:41:24.583108+00:00\"}]"
+]
