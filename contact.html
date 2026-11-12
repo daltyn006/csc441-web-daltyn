@@ -59,37 +59,35 @@
         <section>
             <!-- Class 16 | Step 2: a form -->
             <!-- Class 18 | Step 1: add a way for email to get sent -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                action="/thanks.html">
                 <p class="hidden-field">
                     <label>
-                        Leave this field empty; <input name="bot-field" type="text">
+                        Leave this field empty: <input name="bot-field" type="text">
                     </label>
                 </p>
 
                 <p id="form-status"></p>
-                <p>
-                    Your Name:
-                    <label for="name">
-                        <input id="name" name="name" type="name" required>
-                    </label>
-                </p>
-                <p>
-                    Content:
-                    <label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </label>
-                </p>
-                <p>
-                    Your Email Address:
-                    <label for="email">
-                        <input id="email" name="email" type="email" required>
-                    </label>
-                </p>
 
-                <button type="submit">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input id="name" name="name" type="text" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input id="email" name="email" type="email" required placeholder="email@address.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Content / Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="Example message..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
                     Send Email
                 </button>
-
             </form>
     </main>
     <footer>

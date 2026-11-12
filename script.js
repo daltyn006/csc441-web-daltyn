@@ -1,66 +1,76 @@
 // Class 15 | Step 1: this file is running.
 console.log("Info: load javascript");
+//Page loaded at
+const pageLoad = Date.now();
+
+//Set theme
 
 // Class 15 | Step 3: a button that changes the page
-const themeButton = document.querySelector("#toggle-theme");
-if (themeButton) {
-    // Detect the browser's active OS preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const systemTheme = prefersDark ? 'dark' : 'light';
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const systemTheme = prefersDark ? 'dark' : 'light';
 
-    // Use "default" instead of "" in the themes array and filter condition
-    let themes = ["default", "architect", "cayman", "dark", "dinky", "gruvbox", 
-        "hacker", "leap-day", "light", "merlot", "midnight", "minima", "minimal",
-        "modernist", "slate", "tactile", "time-machine"].filter(theme => {
+let themes = ["default", "architect", "cayman", "dark", "dinky", "gruvbox",
+    "hacker", "leap-day", "light", "merlot", "midnight", "minima", "minimal",
+    "modernist", "slate", "tactile", "time-machine"].filter(theme => {
         return theme === "default" || theme !== systemTheme;
     });
 
-    const labels = {
-        "default": `System (${systemTheme.charAt(0).toUpperCase() + systemTheme.slice(1)})`,
-        "architect": "Architect",
-        "cayman": "Cayman",
-        "dark": "Dark Mode",
-        "dinky": "Dinky",
-        "gruvbox": "Gruvbox",
-        "hacker": "Hacker",
-        "leap-day": "Leap Day",
-        "light": "Light Mode",
-        "merlot": "Merlot",
-        "midnight": "Midnight",
-        "minima": "Minima",
-        "minimal": "Minimal",
-        "modernist": "Modern",
-        "slate": "Slate",
-        "tactile": "Tactile",
-        "time-machine": "Time Machine"
-    };
+const labels = {
+    "default": `System (${systemTheme.charAt(0).toUpperCase() + systemTheme.slice(1)})`,
+    "architect": "Architect",
+    "cayman": "Cayman",
+    "dark": "Dark Mode",
+    "dinky": "Dinky",
+    "gruvbox": "Gruvbox",
+    "hacker": "Hacker",
+    "leap-day": "Leap Day",
+    "light": "Light Mode",
+    "merlot": "Merlot",
+    "midnight": "Midnight",
+    "minima": "Minima",
+    "minimal": "Minimal",
+    "modernist": "Modern",
+    "slate": "Slate",
+    "tactile": "Tactile",
+    "time-machine": "Time Machine"
+};
 
-    let currentTheme = localStorage.getItem("theme") || "default";
+let currentTheme = localStorage.getItem("theme") || "default";
+
+function applyThemeToDoc(theme) {
+    if (theme && theme !== "default") {
+        document.documentElement.setAttribute("theme", theme);
+    } else {
+        document.documentElement.removeAttribute("theme");
+    }
+}
+
+applyThemeToDoc(currentTheme);
+
+// Button to toggle themes
+
+const themeButton = document.querySelector("#toggle-theme");
+
+if (themeButton) {
     let index = themes.includes(currentTheme) ? themes.indexOf(currentTheme) : 0;
 
-    function applyTheme(theme) {
+    function applyThemeWithButton(theme) {
         console.log(`Info: apply ${theme} theme to page.`);
-
-        // If it's "default", remove the attribute; otherwise, set it to the theme name
-        if (theme && theme !== "default") {
-            document.documentElement.setAttribute("theme", theme);
-        } else {
-            document.documentElement.removeAttribute("theme");
-        }
-
+        applyThemeToDoc(theme);
         localStorage.setItem("theme", theme);
         themeButton.textContent = `Theme: ${labels[theme]}`;
     }
-
-    applyTheme(currentTheme);
+    applyThemeWithButton(currentTheme);
 
     themeButton.addEventListener("click", () => {
         index = (index + 1) % themes.length;
-        applyTheme(themes[index]);
+        applyThemeWithButton(themes[index]);
     });
 } else {
-    console.log("ERROR: button failed to set.");
+    console.log("Info: Theme toggle button not present on this page.");
 }
+
+
 
 // Class 15 | Step 2: put this year in the footer.
 // Lab 15 | Step 2: add a try catch.
@@ -69,7 +79,6 @@ if (yearSpan) {
     console.log("Info: get year for copyright")
     yearSpan.textContent = new Date().getFullYear();
 }
-
 
 // Lab 15 · Task 5: Toggle collapsible sections using buttons
 const dropdownButtons = document.querySelectorAll(".dropdown");
@@ -97,53 +106,79 @@ if (dropdownButtons) {
     });
 };
 
+
+
 // Class 16 | Step 4: handle the submit.
 const contactForm = document.querySelector("#contact-form");
 
 if (contactForm) {
-
-    // Lab 16 | Task 1: my own check. 
     const repeatingChars = /([a-zA-Z ])\1{4,}/;
+    const MIN_ONPAGE_TIME = 5000;
+    const COOLDOWN_MS = 60000;
+    const pageLoadTime = Date.now();
 
-    formStatus = document.querySelector("#form-status");
+    const formStatus = document.querySelector("#form-status");
+
     contactForm.addEventListener("submit", function (event) {
         console.log("Info: message requested.");
         event.preventDefault();
 
-
+        const now = Date.now();
         const name = document.querySelector("#name").value;
         const message = document.querySelector("#message").value;
+        const lastSubmit = localStorage.getItem('last_submit_time');
 
         if (!message || message?.length < 10) {
             console.log("Info: message null or too short.");
             formStatus.textContent = "Extend Message!";
             formStatus.classList.add("Error");
+            setTimeout(() => {
+                formStatus.textContent = "";
+            }, 5000);
             return;
-        } else if (repeatingChars.test(message)) {
-            console.log("Info: Gibberish detected, stop being stupid.");
+        }
+        // I do not know of any words or acronyms with four or more of the same letter in a row
+        else if (repeatingChars.test(message)) {
+            console.log("Info: Please remove duplicate artifacts.");
             formStatus.textContent = "Remove duplicate artifacts.";
             formStatus.classList.add("Error");
             setTimeout(() => {
                 formStatus.textContent = "";
             }, 5000);
-
             return;
-
+        }
+        // Minimum 5 second on page to write the email, no speedrunning 
+        else if (now - pageLoadTime < MIN_ONPAGE_TIME) {
+            console.log("Info: please wait before continuing.");
+            const secondsLeft = Math.ceil((MIN_ONPAGE_TIME - (now - pageLoadTime)) / 1000);
+            formStatus.textContent = `Please wait ${secondsLeft} seconds before continuing.`;
+            formStatus.classList.add("Error");
+            setTimeout(() => {
+                formStatus.textContent = "";
+            }, 5000);
+            return;
+        }
+        // Cooldown requirement of 60s to not spam emails 
+        else if (lastSubmit && now - parseInt(lastSubmit, 10) < COOLDOWN_MS) {
+            console.log("Info: cooldown active.");
+            const secondsLeft = Math.ceil((COOLDOWN_MS - (now - parseInt(lastSubmit, 10))) / 1000);
+            formStatus.textContent = `Please wait ${secondsLeft} seconds before sending another message.`;
+            formStatus.classList.add("Error");
+            setTimeout(() => {
+                formStatus.textContent = "";
+            }, 5000);
+            return;
         } else {
-
-
             console.log("Info: message sent successfully.");
+            localStorage.setItem('last_submit_time', now.toString());
             formStatus.textContent = "Thank you, " + name + ". Your message is sent.";
-            // Lab 16 | Task 3: remove the error.
             formStatus.classList.remove("Error");
-
-            // Class 18 | Step 3: Submit the form
             contactForm.submit();
-        };
+        }
+
         contactForm.reset();
-        // Clear the message after a set time from sending.
         setTimeout(() => {
             formStatus.textContent = "";
         }, 5000);
     });
-};
+}
