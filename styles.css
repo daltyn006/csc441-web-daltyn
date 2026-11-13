@@ -480,6 +480,8 @@ button:hover {
     display: none !important;
 }
 
+/* header section */
+
 header {
     display: flex;
     flex-wrap: wrap;
@@ -536,8 +538,6 @@ nav ul {
     padding-left: 0;
     margin-bottom: 2rem;
 }
-
-/*end nav UL switch*/
 
 /* Lab 13 · Task 4: page selector */
 nav a.current {
@@ -618,6 +618,8 @@ nav a.current {
     background: var(--background);
 }
 /* end cards*/
+
+/* form section */
 
 /* Class 16 | Step something: the form */
 form label {
@@ -710,7 +712,7 @@ form button:hover {
     resize: vertical;
     min-height: 120px;
 }
-
+/* end form section */
 
 /* Sprite sheet animation rules */
 .spritesheet_container {
@@ -782,8 +784,6 @@ footer a {
 footer a:hover {
     color: var(--footer-link-hover);
 }
-
-/* 9. MEDIA QUERIES */
 
 @media (min-width: 40rem) {
     nav ul {
