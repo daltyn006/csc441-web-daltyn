@@ -1,5 +1,5 @@
-// Class 20 | Step 3: Find the webpage elements
 
+// Class 20 · Step 3: find the webpage elements
 const showcaseGrid = document.querySelector("#showcase-grid");
 const showcaseStatus = document.querySelector("#showcase-status");
 const showcaseCount = document.querySelector("#showcase-count");
@@ -9,13 +9,13 @@ async function loadShowcase() {
     showcaseStatus.textContent = "Loading from Supabase...";
     showcaseGrid.replaceChildren();
     try {
-        const url = SHOWCASE_CONFIG.url + "/rest/v1/showcase_items" + "?order=id.asc";
+        const url = SHOWCASE_CONFIG.url +
+            "/rest/v1/showcase_items" + "?order=id.desc";
         const response = await fetch(url, {
             headers: { apikey: SHOWCASE_CONFIG.key }
         });
         if (!response.ok) throw new Error("HTTP " + response.status);
-
-        const items = await response.json;
+        const items = await response.json();
         for (const item of items) {
             const card = document.createElement("article");
             card.className = "showcase-card";
@@ -28,15 +28,11 @@ async function loadShowcase() {
             card.append(title, category, description);
             showcaseGrid.appendChild(card);
         }
-        showcaseStatus.textContent = items.length ? "Loaded Successfully!" : "No Items Yet...";
-        if (showcaseCount) {
-            showcaseCount.textContent = item.length + " items";
-        }
+        showcaseStatus.textContent = items.length ? "Loaded successfully." : "No items yet.";
+        if (showcaseCount) showcaseCount.textContent = items.length + " items";
+    } catch (error) {
+        showcaseStatus.textContent = "Could not load the items. Check the Console.";
+        console.error("Showcase API error:", error);
     }
-    } catch (Error) {
-    console.error("failed to load API showcase", error);
 }
-}
-
 if (showcaseGrid && showcaseStatus) loadShowcase();
-
