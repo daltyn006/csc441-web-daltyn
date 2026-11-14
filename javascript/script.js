@@ -1,3 +1,5 @@
+// Split apart 753 line single file to different files for better readability
+
 // Class 15 | Step 1: this file is running.
 console.log("Info: load javascript");
 
