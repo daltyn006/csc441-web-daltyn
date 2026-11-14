@@ -1,0 +1,50 @@
+/* Animation */
+
+.spritesheet_container {
+    display: contents;
+}
+
+.pixel-art-right-toggle {
+    display: none;
+}
+
+.pixel-art-right {
+    --scale: 3;
+    width: calc(24px * var(--scale));
+    height: calc(48px * var(--scale));
+    background-image: url("../assets/animations/default_spritesheet.avif");
+    background-size: calc(768px * var(--scale)) calc(32px * var(--scale));
+    background-repeat: no-repeat;
+    cursor: pointer;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: playArt 1s steps(32) infinite;
+    animation-play-state: paused;
+}
+
+.pixel-art-right-toggle:checked~.pixel-art-right {
+    animation-play-state: running;
+}
+
+.sprite-right-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes playArt {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: calc(-768px * var(--scale)) 0px;
+    }
+}

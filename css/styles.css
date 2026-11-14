@@ -1,0 +1,217 @@
+/* General styling of the webpage */
+
+/* Class 16 | Step 3: padding counts inside width not on top of it */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri, "Trebuchet MS", sans-serif;
+    font-size: small;
+    line-height: 2;
+    transition: all 0.1s ease-in-out;
+    color: var(--text);
+    background: var(--background);
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Unique Items */
+
+section {
+    margin-bottom: 2rem;
+}
+
+.art-left {
+    display: flex;
+    width: 5rem;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1 rem;
+    border: 1px solid blanchedalmond;
+    border-radius: 75%;
+}
+
+/* Lists */
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+li a {
+    display: block;
+    padding: 0;
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+li a:hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+/* Buttons */
+
+button {
+    color: var(--button-text);
+    background-color: var(--background);
+    border-color: var(--button-border);
+}
+
+button:hover {
+    color: var(--link-hover);
+    background-color: var(--background);
+    border-color: var(--button-border);
+}
+
+/* Display off */
+
+.hidden {
+    display: none !important;
+}
+
+/* Class 18 | Step 2: formatting the hidden method */
+.hidden-field {
+    display: none !important;
+}
+
+/* Headers */
+
+h1 {
+    font-size: larger;
+    line-height: 3rem;
+    color: var(--title-name);
+    border-bottom: 1px solid var(--border);
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: large;
+    line-height: 3rem;
+    color: var(--section-title);
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size:medium;
+    line-height: 3rem;
+    color: var(--subtitle);
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-text {
+    flex: 1;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h3 {
+    margin: 0;
+}
+
+header p {
+    font-size:small;
+    color: var(--text-muted);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Navigation */
+
+/* Lab 14 | Task 1: the nav stacks for narrow */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+/* Lab 13 · Task 4: page selector */
+nav a.current {
+    display: inline-flex;
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+    padding: 0;
+}
+
+/* Footers */
+
+/* Lab 14 | Task 4: footer stacks on narrow screens */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    font-size: small;
+    border-top: 1px solid var(--border);
+}
+
+footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+}
+
+/* Media */
+
+@media print {
+    body {
+        max-width: 100%;
+    }
+
+    nav,
+    .spritesheet_container,
+    .dropdown,
+    #toggle-theme {
+        display: none !important;
+    }
+}
+
+@media (min-width: 40rem) {
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .cards {
+        flex-direction: row;
+        padding: 1px;
+    }
+
+    /* Lab 14 | Task 4: footer stacks on narrow screens */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

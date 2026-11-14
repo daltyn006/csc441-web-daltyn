@@ -3,15 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Class 16 | Step 1: My contact page -->
     <title>Contact • Daltyn</title>
+    <meta name="description" content="Send Daltyn a message through the contact form.">
+    <link rel="icon" type="image/x-icon" href="assets/other/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/other/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/other/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/other/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#c0c0c0">
     <!-- Class 12 | Step 1: a typeface I choose-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.google.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/sprite.css">
+    <link rel="stylesheet" href="css/form.css">
+
     <!-- Class 15 | Step 1: JavaScript file -->
-    <script src="script.js" defer></script>
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/themes.js" defer></script>
+    <script src="javascript/contact.js" defer></script>
 </head>
 
 <body>
@@ -27,12 +38,12 @@
             <li>
                 <a href="gallery.html">Gallery</a>
             </li>
+            <li>
+                <a href="interests.html">Interests</a>
+            </li>
             <!-- Class 16 | Step 1: add contact page. -->
             <li>
                 <a href="contact.html" class="current">Contact Me</a>
-            </li>
-            <li>
-                <a href="interests.html">Interests</a>
             </li>
             <!-- Class 15 Step 3 the time button -->
             <li><button id="toggle-theme" type="button"></button></li>
@@ -43,7 +54,7 @@
     <!-- Class 11 | Step 2: The Page -->
     <header>
         <!--Class 12 | Step 3: an image-->
-        <img src="./assets/art/photography/me.avif" alt="an image of myself" class="art-left" class="art-left">
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
         <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
         <div class="content">
             <h1>Contact: Daltyn Landas</h1>

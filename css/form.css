@@ -1,0 +1,71 @@
+/* Class 16 | Step 3: the form */
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    font: inherit;
+    width: 80%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--border);
+    background-color: var(--background);
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Class 18 | Step 2: the submit button */
+
+.submit-btn {
+    font: inherit;
+    font-weight: bold;
+    color: var(--button-text);
+    background-color: var(--background);
+    border: 1px solid var(--button-border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    font-weight: bolder;
+    color: var(--button-hover);
+}
+
+/* Lab 16 | Task 2: an error code */
+
+#form-status {
+    font: inherit;
+    font-weight: bold;
+    color: var(--text);
+}
+
+#form-status.error {
+    color: var(--error);
+}
