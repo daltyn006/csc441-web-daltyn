@@ -1,0 +1,97 @@
+/* Class 16 | Step 3: the form */
+form label {
+    display: block;
+    font-weight: bolder;
+    margin: 1rem;
+    margin-bottom: 0.25rem;
+    padding: 1rem;
+}
+
+form input,
+form textarea {
+    font: inherit;
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--background);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+form button {
+    font: inherit;
+    font-weight: bold;
+    color: var(--button-text);
+    background-color: var(--background);
+    border-color: var(--button-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    font: inherit;
+    font-weight: bolder;
+    color: var(--button-hover);
+    background-color: var(--background);
+    border-color: var(--button-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+#form-status {
+    font: inherit;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--border);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 80%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--border);
+    background-color: var(--background);
+    box-shadow: var(--accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Lab 16 | Task 2: an error code */
+#form-status.error {
+    color: var(--error)
+}
+

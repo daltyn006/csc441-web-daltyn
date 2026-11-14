@@ -1,0 +1,54 @@
+/* Class 20 · Step 5: cards use your existing theme variables */
+.interests-section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 1rem;
+}
+
+.showcase-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--border, lightgray);
+    background: var(--background, white);
+    color: var(--text, black);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.showcase-card h3 {
+    margin: 0 0 .4rem;
+}
+
+.showcase-card small {
+    color: var(--accent, royalblue);
+    font-weight: 700;
+}
+
+.showcase-card p {
+    line-height: 1.5;
+}
+
+#showcase-status {
+    color: var(--text-muted, dimgray);
+}
+
+.showcase-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.showcase-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

@@ -6,12 +6,17 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>Gallery • Daltyn</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/sprite.css">
+    <link rel="stylesheet" href="css/cards.css">
     <link rel="preconnect" href="https://fonts.google.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <!-- Lab 15 | Task 1: add js -->
-    <script src="script.js" defer></script>
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/themes.js" defer></script>
+    <script src="javascript/gallery.js" defer></script>
 </head>
 
 <body>
@@ -73,32 +78,7 @@
                 </div>
 
                 <!-- The cards container sits safely below the header -->
-                <div class="cards">
-                    <div class="card">
-                        <img src="assets/art/drawings/online/swords.avif"
-                            alt="computer generated image of two broadswords clashing - Chroma">
-                    </div>
-                    <div class="card">
-                        <img src="assets/art/drawings/online/foxy.avif"
-                            alt="computer generated image of a fluffy fox - Chroma">
-                    </div>
-                    <div class="card">
-                        <img src="assets/art/drawings/online/header.avif"
-                            alt="computer generated image of a glass bust - SDXL">
-                    </div>
-                    <div class="card">
-                        <img src="assets/art/drawings/online/bugman.avif"
-                            alt="computer generated image of a man made of bugs - SDXL">
-                    </div>
-                    <div class="card">
-                        <img src="assets/art/drawings/online/coffin.avif"
-                            alt="computer generated image of a coffin - SDXL">
-                    </div>
-                    <div class="card">
-                        <img src="assets/art/drawings/online/necklace.avif"
-                            alt="computer generated image of a necklace - SDXL">
-                    </div>
-                </div>
+                <div class="cards" data-gallery="digital"></div>
             </div>
 
             <div class="align-header">
@@ -107,39 +87,8 @@
                 <h3>Photographs</h3>
             </div>
 
-            <div class="cards">
-                <!-- Lab 14 | Task 3: cards on my page -->
-                <section class="card">
-                    <img src="assets/art/photography/duck.avif" alt="A duck">
-                </section>
-                <section class="card">
-                    <img src="assets/art/photography/swan.avif" alt="A swan">
-                </section>
-                <div>
-                    <section class="card">
-                        <img src="assets/art/photography/photo_lake.avif" alt="A lake">
-                    </section>
-                </div>
-                <section class="card">
-                    <img src="assets/art/photography/stream.avif" alt="A stream">
-                </section>
-                <section class="card">
-                    <img src="assets/art/photography/flowers.avif" alt="Some dead flowers">
-                </section>
-                <div>
-                    <section class="card">
-                        <img src="assets/art/photography/dynamic.avif" alt="Epic skies">
-                    </section>
-                </div>
-                <section class="card">
-                    <img src="assets/art/photography/hat.avif" alt="Hat on bleachers">
-                </section>
-                <section class="card">
-                    <img src="assets/art/photography/clouds.avif" alt="Clouds in the skies">
-                </section>
-                <section class="card">
-                    <img src="assets/art/photography/rocks.avif" alt="A bunch of rocks">
-                </section>
+            <div class="cards" data-gallery="photographs">
+                <!-- Lab 14 | Task 3: cards on my page [ now from javascript ]-->
             </div>
         </section>
 
@@ -148,15 +97,12 @@
                 <!-- Lab 15 | Task 5: hide sections -->
                 <button type="button" class="dropdown">&gt;</button>
                 <h3>Hand</h3>
+                <p>
+                    The majority of these are silly five minute sketches,
+                    I plan to improve my drawing abilities in the future.
+                </p>
             </div>
-            <div class="cards">
-                <p>The majority of these are silly five minute sketches, I plan to improve my drawing abilities in the
-                    future.</p>
-                <div class="card">
-                    <img src="assets/art/drawings/online/workstudy.avif " alt="A student studyking">
-                </div>
-
-            </div>
+            <div class="cards" data-gallery="hand"></div>
         </div>
     </main>
 
