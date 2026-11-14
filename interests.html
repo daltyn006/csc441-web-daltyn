@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests • Daltyn</title>
+    <meta name="description" content="Interests and a live showcase of things Daltyn is into.">
+    <link rel="icon" type="image/x-icon" href="assets/other/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/other/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/other/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/other/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#c0c0c0">
+    <!-- Class 12 | Step 1: a typeface I choose-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/sprite.css">
+    <link rel="stylesheet" href="css/showcase.css">
+    <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/themes.js" defer></script>
+    <!-- Class 20 | Step 2: api connection, then api page -->
+    <script src="javascript/config.js" defer></script>
+    <script src="javascript/interests.js" defer></script>
+</head>
+
+<body>
+    <!-- Lab 12 | Task 1: Current page-->
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+                <a href="interests.html" class="current">Interests</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact Me</a>
+            </li>
+
+            <!-- Class 15 | Step 3: the theme button -->
+            <li><button id="toggle-theme" type="button"></button></li>
+        </ul>
+    </nav>
+
+    <!-- Class 11 | Step 2: The Page -->
+    <header>
+        <!--Class 12 | Step 3: an image-->
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
+        <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
+        <div class="content">
+            <h1>Daltyn Landas</h1>
+        </div>
+        <label class="spritesheet_container">
+            <input type="checkbox" class="pixel-art-right-toggle">
+            <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
+                <img src="./assets/animations/default_spritesheet.avif" alt="A small fellow waving."
+                    class="sprite-right-only">
+            </div>
+        </label>
+    </header>
+    <main>
+        <!-- Class 20 | Step 1: add section inside the existing main on interest html -->
+        <section class="interests-section">
+            <h2>My Interests</h2>
+            <p>
+                I enjoy drawing and creating art in my free time,
+                these items come from my Supabase database.
+            </p>
+            <p id="showcase-status" role="status"><b>Waiting to load...</b></p>
+            <p id="showcase-count"></p>
+            <div id="showcase-grid" class="showcase-grid"></div>
+        </section>
+        <!-- Lab 20 | Task 1: ask the api again -->
+        <button id="showcase-refresh" type="button">Refresh</button>
+    </main>
+
+    <footer>
+        <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
+            <!-- Class 15 | Step 2: The year writen by JavaScript -->
+            &copy; <span id="year"></span> Daltyn Landas.
+        </a>
+    </footer>
+</body>
+
+</html>

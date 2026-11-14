@@ -47,3 +47,35 @@ Biggest problem is probably going to be figuring out SLS for the default .me add
 5. Both addresses point to the Github repository, the .netlify.app subdomain is the default address assigned by Netlify. My custom domain is linked via DNS records that point traffic to Netlify's content network. When a browser requests the page, Netlify's servers receive the request, inspect the HTTP Host header to see which domain was asked for, and serve the exact same site files accordingly.
 
 6. I'd like to try to implement something like what every single site is doing with using ai on the site. I'd probably train a tiny model off of SmolLM2 or qwen2.5:0.5b to run off huggingface and pull weights to the consumer gpu for answering some questions on the site from some sort of database set into it explaining a bunch of things.
+
+
+## Week 12, Wednesday, S19
+Topic: Digital Images
+Supabase project: CSC441-api-daltynlandas
+Table: showcase_items
+Project URL: https://cdfichxcvdpjewcovyqk.supabase.co
+GET endpoint: https://cdfichxcvdpjewcovyqk.supabase.co/rest/v1/showcase_items?select=*&order=id.asc
+HTTP status: 200 OK
+Records returned: 5
+
+## Week 12, Wednesday, Lab 19
+  1. Data about one kind of thing, organized into rows and columns. Each row is one class, and each column is a variable. So a posts table isn't "the posts page" it's just the raw entries the page gets built from.
+  
+  2. The table is where the data actually lives. The endpoint is a URL you send requests to a door that lets your app reach that data over HTTP. The table is storage; the endpoint is access. One endpoint usually sits in front of a table, but it can also pull from several tables or return something computed, so they aren't the same thing.
+  
+  3. GET asks the server to send data back. It's the read method, it fetches, it doesn't create, edit, or delete anything. My endpoint returned JSON: an array of objects, one object per row, with the column names as keys.
+
+  4.  Because anything in front-end code is public — anyone can open DevTools and read it. The publishable key is designed to be exposed: it identifies the project and can only do what the Row Level Security policies allow. A secret key skips those rules and has full access to everything, so if it ships in the browser, anyone could read, change, or wipe the whole database. Secret keys stay on a server; publishable keys go in the client.
+  
+  5. Only the columns that came back. Select=* returns every column for each row (id, body, created_at, whatever else exists). Naming the columns returns just those two fields per object, the same number of rows, less data sent, less noise to dig through, and no columns exposed that the page doesn't need. It's choosing fields, not filtering rows — that's a separate where/filter step.
+
+## Week 12, Friday, Lab 20
+  1. It sends a GET request to the Supabase table with the publishable API key in the headers. Supabase responds with a JavaScript array of objects representing your database rows like title and description and the response.json parses that into readable data.
+
+  2. textContent is safer and faster since it treats data as plain text. If someone stored a malicious script tag in my database, textContent only renders text instead of running it, which stops XSS attacks. For performance, the browser does not have to parse strings for hidden HTML tags.
+
+  3. If the database is empty the fetch returns an empty array. The loop skips entirely, nothing gets rendered, and the status text automatically updates to say no items yet.
+
+  4. If the network fails it jumps straight to the catch block. The grid clears out, the status updates to tell you it could not load, and the actual error prints to your browser console so you can debug.
+
+  5. Every single card, image, and text element is built inside the JavaScript using createElement and then pushed onto the interests.html.
