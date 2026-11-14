@@ -66,6 +66,39 @@
   border-radius: 8px;
 }
 
+/* Lightbox: click a card image to view it full-size */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lightbox p {
+    color: #fff;
+    margin: 0;
+    font-size: small;
+}
+
+.card img {
+    cursor: zoom-in;
+}
+
 /* Dropdown */
 
 .dropdown {

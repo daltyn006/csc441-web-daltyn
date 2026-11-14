@@ -30,15 +30,15 @@ const GALLERY_SECTIONS = [
         id: "hand",
         folder: "assets/art/drawings/hand",
         images: [
-            { file: "cladcity.avif", alt: "cladcity" },
-            { file: "dombsdaygrillaz.avif", alt: "dombsdaygrillaz" },
-            { file: "doomer.avif", alt: "doomer" },
-            { file: "gistintumberland.avif", alt: "gistintumberland" },
-            { file: "radiehead.avif", alt: "radiehead" },
-            { file: "paper.png", alt: "pencil on a scroll"},
-            { file: "blender.png", alt: "a blender" },
-            { file: "cans.png", alt: "camera"},
-            { file: "splatterart.png", alt: "splatter artifact"},
+            { file: "cladcity.avif", alt: "Sketch of a van parked between houses under a yellow sun, captioned B.a.a.d City" },
+            { file: "dombsdaygrillaz.avif", alt: "Four-panel character sheet titled Gimbas, featuring figures in hats" },
+            { file: "doomer.avif", alt: "Dark sketch of a grim figure with hollow eyes and a leaf on its head" },
+            { file: "gistintumberland.avif", alt: "Portrait of a bearded man in a tie, captioned Jimber Tumblemake" },
+            { file: "radiehead.avif", alt: "Minimal sketch of a face beside distorted text reading the bones" },
+            { file: "paper.png", alt: "Pencil resting on a blank scroll of paper" },
+            { file: "blender.png", alt: "Sketch of a blender sitting on a counter" },
+            { file: "cans.png", alt: "Sketch of a Canon DSLR camera" },
+            { file: "splatterart.png", alt: "Abstract splatter of neon colorful ribbons" },
             { file: "workstudy.avif", alt: "A student studying" },
         ],
     },
@@ -63,6 +63,16 @@ function loadGalleryImages() {
             img.loading = "lazy";
             img.addEventListener("error", () => img.remove());
 
+            // Click a card to view the image full-size (keyboard accessible)
+            card.tabIndex = 0;
+            card.addEventListener("click", () => openLightbox(img));
+            card.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox(img);
+                }
+            });
+
             card.appendChild(img);
             container.appendChild(card);
         }
@@ -70,11 +80,42 @@ function loadGalleryImages() {
 }
 loadGalleryImages();
 
+// Lightbox: click anywhere or press Esc to close
+function openLightbox(img) {
+    let box = document.querySelector(".lightbox");
+    if (!box) {
+        box = document.createElement("div");
+        box.className = "lightbox";
+        box.setAttribute("role", "dialog");
+        box.setAttribute("aria-modal", "true");
+        box.addEventListener("click", () => box.remove());
+        document.body.appendChild(box);
+    }
+    box.replaceChildren();
+
+    const large = document.createElement("img");
+    large.src = img.src;
+    large.alt = img.alt;
+
+    const caption = document.createElement("p");
+    caption.textContent = img.alt;
+
+    box.append(large, caption);
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        const box = document.querySelector(".lightbox");
+        if (box) box.remove();
+    }
+});
+
 // Lab 15 · Task 5: Toggle collapsible sections using buttons
 const dropdownButtons = document.querySelectorAll(".dropdown");
 
 if (dropdownButtons) {
     dropdownButtons.forEach(button => {
+        button.setAttribute("aria-expanded", "true");
         button.addEventListener("click", function () {
             console.log("Info: dropdown switch called.");
             const header = this.closest(".align-header");
@@ -82,6 +123,7 @@ if (dropdownButtons) {
 
             if (targetContent) {
                 targetContent.classList.toggle("hidden");
+                this.setAttribute("aria-expanded", String(!targetContent.classList.contains("hidden")));
 
                 // Swap arrow text between > (open) and v (closed)
                 if (targetContent.classList.contains("hidden")) {
