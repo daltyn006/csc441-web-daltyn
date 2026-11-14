@@ -137,7 +137,7 @@ if (contactForm) {
             }, 5000);
             return;
         }
-        // I do not know of any words or acronyms with four or more of the same letter in a row
+        // I don't know of any words or acronyms with four or more of the same letter in a row
         else if (repeatingChars.test(message)) {
             console.log("Info: Please remove duplicate artifacts.");
             formStatus.textContent = "Remove duplicate artifacts.";
@@ -147,7 +147,7 @@ if (contactForm) {
             }, 5000);
             return;
         }
-        // Minimum 5 second on page to write the email, no speedrunning 
+        // Minimum 5 second on page to write the email
         else if (now - pageLoadTime < MIN_ONPAGE_TIME) {
             console.log("Info: please wait before continuing.");
             const secondsLeft = Math.ceil((MIN_ONPAGE_TIME - (now - pageLoadTime)) / 1000);
@@ -158,7 +158,7 @@ if (contactForm) {
             }, 5000);
             return;
         }
-        // Cooldown requirement of 60s to not spam emails 
+        // Cool-down requirement of 60s to not spam emails 
         else if (lastSubmit && now - parseInt(lastSubmit, 10) < COOLDOWN_MS) {
             console.log("Info: cooldown active.");
             const secondsLeft = Math.ceil((COOLDOWN_MS - (now - parseInt(lastSubmit, 10))) / 1000);

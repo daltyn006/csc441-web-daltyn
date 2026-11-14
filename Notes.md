@@ -59,17 +59,23 @@ HTTP status: 200 OK
 Records returned: 5
 
 ## Week 12, Wednesday, Lab 19
-  1. What's stored in a database table?
-  Data about one kind of thing, organised into rows and columns. Each row is one record (one post, one user, one product), and each column is a field that record has (title, category, created_at). So a posts table isn't "the posts page" — it's just the raw entries the page gets built from.
+  1. Data about one kind of thing, organized into rows and columns. Each row is one class, and each column is a variable. So a posts table isn't "the posts page" it's just the raw entries the page gets built from.
   
-  2. Table vs API endpoint?
-  The table is where the data actually lives. The endpoint is a URL you send requests to — a door that lets your app reach that data over HTTP. The table is storage; the endpoint is access. One endpoint usually sits in front of a table, but it can also pull from several tables or return something computed, so they aren't the same thing.
+  2. The table is where the data actually lives. The endpoint is a URL you send requests to a door that lets your app reach that data over HTTP. The table is storage; the endpoint is access. One endpoint usually sits in front of a table, but it can also pull from several tables or return something computed, so they aren't the same thing.
   
-  3. What does GET do? What format came back?
+  3. GET asks the server to send data back. It's the read method, it fetches, it doesn't create, edit, or delete anything. My endpoint returned JSON: an array of objects, one object per row, with the column names as keys.
+
+  4.  Because anything in front-end code is public — anyone can open DevTools and read it. The publishable key is designed to be exposed: it identifies the project and can only do what the Row Level Security policies allow. A secret key skips those rules and has full access to everything, so if it ships in the browser, anyone could read, change, or wipe the whole database. Secret keys stay on a server; publishable keys go in the client.
   
-  GET asks the server to send data back. It's the read method — it fetches, it doesn't create, edit or delete anything. My endpoint returned JSON: an array of objects, one object per row, with the column names as keys, e.g.
-  4. Why a publishable key and not a secret key?
-  Because anything in front-end code is public — anyone can open DevTools and read it. The publishable key is designed to be exposed: it identifies the project and can only do what the Row Level Security policies allow. A secret key skips those rules and has full access to everything, so if it ships in the browser, anyone could read, change or wipe the whole database. Secret keys stay on a server; publishable keys go in the client.
-  
-  5. What changed with select=title,category?
-  Only the columns that came back. select=* returns every column for each row (id, body, created_at, whatever else exists). Naming the columns returns just those two fields per object — same number of rows, less data sent, less noise to dig through, and no columns exposed that the page doesn't need. It's choosing fields, not filtering rows — that's a separate where/filter step.
+  5. Only the columns that came back. Select=* returns every column for each row (id, body, created_at, whatever else exists). Naming the columns returns just those two fields per object, the same number of rows, less data sent, less noise to dig through, and no columns exposed that the page doesn't need. It's choosing fields, not filtering rows — that's a separate where/filter step.
+
+## Week 12, Friday, Lab 20
+  1. It sends a GET request to the Supabase table with the publishable API key in the headers. Supabase responds with a JavaScript array of objects representing your database rows like title and description and the response.json parses that into readable data.
+
+  2. textContent is safer and faster since it treats data as plain text. If someone stored a malicious script tag in my database, textContent only renders text instead of running it, which stops XSS attacks. For performance, the browser does not have to parse strings for hidden HTML tags.
+
+  3. If the database is empty the fetch returns an empty array. The loop skips entirely, nothing gets rendered, and the status text automatically updates to say no items yet.
+
+  4. If the network fails it jumps straight to the catch block. The grid clears out, the status updates to tell you it could not load, and the actual error prints to your browser console so you can debug.
+
+  5. Every single card, image, and text element is built inside the JavaScript using createElement and then pushed onto the interests.html.
