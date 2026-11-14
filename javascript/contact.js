@@ -22,7 +22,7 @@ if (contactForm) {
         if (!message || message?.length < 10) {
             console.log("Info: message null or too short.");
             formStatus.textContent = "Extend Message!";
-            formStatus.classList.add("Error");
+            formStatus.classList.add("error");
             setTimeout(() => {
                 formStatus.textContent = "";
             }, 5000);
@@ -32,7 +32,7 @@ if (contactForm) {
         else if (repeatingChars.test(message)) {
             console.log("Info: Please remove duplicate artifacts.");
             formStatus.textContent = "Remove duplicate artifacts.";
-            formStatus.classList.add("Error");
+            formStatus.classList.add("error");
             setTimeout(() => {
                 formStatus.textContent = "";
             }, 5000);
@@ -43,7 +43,7 @@ if (contactForm) {
             console.log("Info: please wait before continuing.");
             const secondsLeft = Math.ceil((MIN_ONPAGE_TIME - (now - pageLoadTime)) / 1000);
             formStatus.textContent = `Please wait ${secondsLeft} seconds before continuing.`;
-            formStatus.classList.add("Error");
+            formStatus.classList.add("error");
             setTimeout(() => {
                 formStatus.textContent = "";
             }, 5000);
@@ -54,7 +54,7 @@ if (contactForm) {
             console.log("Info: cooldown active.");
             const secondsLeft = Math.ceil((COOLDOWN_MS - (now - parseInt(lastSubmit, 10))) / 1000);
             formStatus.textContent = `Please wait ${secondsLeft} seconds before sending another message.`;
-            formStatus.classList.add("Error");
+            formStatus.classList.add("error");
             setTimeout(() => {
                 formStatus.textContent = "";
             }, 5000);
@@ -63,13 +63,8 @@ if (contactForm) {
             console.log("Info: message sent successfully.");
             localStorage.setItem('last_submit_time', now.toString());
             formStatus.textContent = "Thank you, " + name + ". Your message is sent.";
-            formStatus.classList.remove("Error");
+            formStatus.classList.remove("error");
             contactForm.submit();
         }
-
-        contactForm.reset();
-        setTimeout(() => {
-            formStatus.textContent = "";
-        }, 5000);
     });
 }

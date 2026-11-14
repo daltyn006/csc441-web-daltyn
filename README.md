@@ -1,4 +1,4 @@
 # Website
 
-Welcome to my webpage, 
+Welcome to my web page, 
 https://www.daltynlandas.me.
