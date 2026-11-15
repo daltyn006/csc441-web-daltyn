@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/sprite.css">
     <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="javascript/themes.js"></script>
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/themes.js" defer></script>
 </head>
 
 <body>
@@ -40,16 +40,18 @@
             <li>
                 <a href="contact.html">Contact Me</a>
             </li>
-
-            <!-- Class 15 | Step 3: the theme button -->
-            <li><button id="toggle-theme" type="button"></button></li>
+            <!-- Lab 15 | Task 1: add the button [Now created in javascript]-->
+            <li>
+                <label for="theme-select" class="selector"></label>
+                <select id="theme-select"></select>
+            </li>
         </ul>
     </nav>
 
     <!-- Class 11 | Step 2: The Page -->
     <header>
         <!--Class 12 | Step 3: an image-->
-        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left" fetchpriority="high">
         <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
         <div class="content">
             <h1>Daltyn Landas</h1>
@@ -96,10 +98,17 @@
             <h2>Skills</h2>
             <ul>
                 <li>Doing things before they're asked, or branching tasks from distractions.</li>
-                <li>Tying knots in everything.</li>
+                <li>Both accidentally and intentionally tying knots in everything.</li>
                 <li>Figuring out ways to complicate easy things, and simplify complex things.</li>
             </ul>
         </section>
+        <h2>Qualifications</h2>
+        <ul>
+            <li>Eagle Scout</li>
+            <li>Computer Savvy</li>
+            <li>Media Literate</li>
+        </ul>
+
     </main>
 
     <footer>

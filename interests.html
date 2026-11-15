@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="css/sprite.css">
     <link rel="stylesheet" href="css/showcase.css">
     <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="javascript/themes.js"></script>
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/themes.js" defer></script>
     <!-- Class 20 | Step 2: api connection, then api page -->
     <script src="javascript/config.js" defer></script>
     <script src="javascript/interests.js" defer></script>
@@ -44,16 +44,18 @@
             <li>
                 <a href="contact.html">Contact Me</a>
             </li>
-
-            <!-- Class 15 | Step 3: the theme button -->
-            <li><button id="toggle-theme" type="button"></button></li>
+            <!-- Lab 15 | Task 1: add the button [Now created in javascript]-->
+            <li>
+                <label for="theme-select" class="selector"></label>
+                <select id="theme-select"></select>
+            </li>
         </ul>
     </nav>
 
     <!-- Class 11 | Step 2: The Page -->
     <header>
         <!--Class 12 | Step 3: an image-->
-        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left" fetchpriority="high">
         <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
         <div class="content">
             <h1>Daltyn Landas</h1>

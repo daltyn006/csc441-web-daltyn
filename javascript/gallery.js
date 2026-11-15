@@ -1,3 +1,5 @@
+console.log("Info: load gallery.js");
+
 const GALLERY_SECTIONS = [
     {
         id: "digital",
@@ -35,16 +37,15 @@ const GALLERY_SECTIONS = [
             { file: "doomer.avif", alt: "M.F. Doom - Madvillainy interpretation" },
             { file: "gistintumberland.avif", alt: `Justin Timberlake in Russian film "Stalker"` },
             { file: "radiehead.avif", alt: "Radiohead - The Bends interpretation" },
-            { file: "paper.png", alt: "Pencil resting on a blank scroll of paper" },
-            { file: "blender.png", alt: "Sketch of a blender sitting on a table" },
-            { file: "cans.png", alt: "Sketch of a Canon DSLR camera" },
-            { file: "splatterart.png", alt: "Abstract splatter of neon colorful ribbons" },
+            { file: "paper.avif", alt: "Pencil resting on a blank scroll of paper" },
+            { file: "blender.avif", alt: "Sketch of a blender sitting on a table" },
+            { file: "camera.avif", alt: "Sketch of a Canon DSLR camera" },
+            { file: "splatterart.avif", alt: "Abstract splatter of neon colorful ribbons" },
             { file: "workstudy.avif", alt: "A student studying in a dim lit room" },
         ],
     },
 ];
 
-// Automate image loading in gallery.html
 function loadGalleryImages() {
     for (const section of GALLERY_SECTIONS) {
         const container = document.querySelector(`[data-gallery="${section.id}"]`);
@@ -57,13 +58,11 @@ function loadGalleryImages() {
             card.className = image.panorama ? "card panorama-card" : "card";
 
             const img = document.createElement("img");
-
             img.src = section.folder + "/" + image.file;
             img.alt = image.alt;
-            img.loading = "lazy";
-            img.addEventListener("error", () => img.remove());
+            img.loading = "lazy";      
+            img.decoding = "async";    
 
-            // Click a card to view the image full-size (keyboard accessible)
             card.tabIndex = 0;
             card.addEventListener("click", () => openLightbox(img));
             card.addEventListener("keydown", (event) => {
@@ -96,6 +95,7 @@ function openLightbox(img) {
     const large = document.createElement("img");
     large.src = img.src;
     large.alt = img.alt;
+    large.decoding = "async"; 
 
     const caption = document.createElement("p");
     caption.textContent = img.alt;
@@ -113,27 +113,19 @@ document.addEventListener("keydown", (event) => {
 // Lab 15 · Task 5: Toggle collapsible sections using buttons
 const dropdownButtons = document.querySelectorAll(".dropdown");
 
-if (dropdownButtons) {
-    dropdownButtons.forEach(button => {
-        button.setAttribute("aria-expanded", "true");
-        button.addEventListener("click", function () {
-            console.log("Info: dropdown switch called.");
-            const header = this.closest(".align-header");
-            const targetContent = header.nextElementSibling;
+dropdownButtons.forEach(button => {
+    button.setAttribute("aria-expanded", "true");
+    button.addEventListener("click", function () {
+        const header = this.closest(".align-header");
+        const targetContent = header.nextElementSibling;
 
-            if (targetContent) {
-                targetContent.classList.toggle("hidden");
-                this.setAttribute("aria-expanded", String(!targetContent.classList.contains("hidden")));
-
-                // Swap arrow text between > (open) and v (closed)
-                if (targetContent.classList.contains("hidden")) {
-                    this.textContent = "v";
-                } else {
-                    this.textContent = ">";
-                };
-            } else {
-                console.log("ERROR: dropdown switch failed");
-            };
-        });
+        if (targetContent) {
+            targetContent.classList.toggle("hidden");
+            const isOpen = !targetContent.classList.contains("hidden");
+            this.setAttribute("aria-expanded", String(isOpen));
+            this.textContent = isOpen ? ">" : "v";
+        } else {
+            console.log("ERROR: dropdown switch failed");
+        }
     });
-};
+});
