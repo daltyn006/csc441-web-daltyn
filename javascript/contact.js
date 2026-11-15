@@ -1,4 +1,4 @@
-
+console.log("Info: load contact.js")
 // Class 16 | Step 4: handle the submit.
 const contactForm = document.querySelector("#contact-form");
 
@@ -38,7 +38,7 @@ if (contactForm) {
             }, 5000);
             return;
         }
-        // Minimum 5 second on page to write the email
+        // Minimum 5 seconds on page to write the email
         else if (now - pageLoadTime < MIN_ONPAGE_TIME) {
             console.log("Info: please wait before continuing.");
             const secondsLeft = Math.ceil((MIN_ONPAGE_TIME - (now - pageLoadTime)) / 1000);

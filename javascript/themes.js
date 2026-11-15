@@ -1,25 +1,20 @@
+// Class 15 | Step 3: a dropdown that picks the page theme.
 
+// Every theme name in the order the dropdown shows them.
+const themeNames = ["light", "dark", "architect", "cayman", "dinky", "gruvbox",
+    "hacker", "leap-day", "merlot", "midnight", "minima", "minimal",
+    "modernist", "slate", "tactile", "time-machine"];
 
-// Class 15 | Step 3: a button that changes the page
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const systemTheme = prefersDark ? 'dark' : 'light';
-
-let themes = ["default", "architect", "cayman", "dark", "dinky", "gruvbox",
-    "hacker", "leap-day", "light", "merlot", "midnight", "minima", "minimal",
-    "modernist", "slate", "tactile", "time-machine"].filter(theme => {
-        return theme === "default" || theme !== systemTheme;
-    });
-
-const labels = {
-    "default": `System (${systemTheme.charAt(0).toUpperCase() + systemTheme.slice(1)})`,
+// The label provided for each theme.
+const themeLabels = {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
     "architect": "Architect",
     "cayman": "Cayman",
-    "dark": "Dark Mode",
     "dinky": "Dinky",
     "gruvbox": "Gruvbox",
     "hacker": "Hacker",
     "leap-day": "Leap Day",
-    "light": "Light Mode",
     "merlot": "Merlot",
     "midnight": "Midnight",
     "minima": "Minima",
@@ -30,37 +25,46 @@ const labels = {
     "time-machine": "Time Machine"
 };
 
-let currentTheme = localStorage.getItem("theme") || "default";
+const root = document.documentElement;
 
-function applyThemeToDoc(theme) {
-    if (theme && theme !== "default") {
-        document.documentElement.setAttribute("theme", theme);
+let theme = null;
+try {
+    theme = localStorage.getItem("theme");
+} catch (error) {
+    // Use the system preference, no real error.
+}
+if (!themeNames.includes(theme)) {
+    if (matchMedia("(prefers-color-scheme: dark)").matches) {
+        theme = "dark";
     } else {
-        document.documentElement.removeAttribute("theme");
+        theme = "light";
     }
 }
+root.setAttribute("theme", theme);
 
-applyThemeToDoc(currentTheme);
+// Wait for dropdown selector to load, create themes for display.
+addEventListener("DOMContentLoaded", () => {
+    const select = document.querySelector("#theme-select");
+    if (!select) return;
 
-// Button to toggle themes
-
-const themeButton = document.querySelector("#toggle-theme");
-
-if (themeButton) {
-    let index = themes.includes(currentTheme) ? themes.indexOf(currentTheme) : 0;
-
-    function applyThemeWithButton(theme) {
-        console.log(`Info: apply ${theme} theme to page.`);
-        applyThemeToDoc(theme);
-        localStorage.setItem("theme", theme);
-        themeButton.textContent = `Theme: ${labels[theme]}`;
+    for (let i = 0; i < themeNames.length; i++) {
+        const name = themeNames[i];
+        const option = document.createElement("option");
+        option.value = name;
+        option.textContent = themeLabels[name];
+        select.appendChild(option);
     }
-    applyThemeWithButton(currentTheme);
 
-    themeButton.addEventListener("click", () => {
-        index = (index + 1) % themes.length;
-        applyThemeWithButton(themes[index]);
+    select.value = theme;
+
+    select.addEventListener("change", () => {
+        theme = select.value;
+        root.setAttribute("theme", theme);
+        try {
+            localStorage.setItem("theme", theme);
+            console.log(`Info: ${theme} is set`)
+        } catch (error) {
+            // I think this is impossible but it's safer than nothing
+        }
     });
-} else {
-    console.log("Info: Theme toggle button not present on this page.");
-}
+});

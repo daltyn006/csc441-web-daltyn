@@ -1,3 +1,5 @@
+console.log("Info: load interests.js")
+
 // Class 20 · Step 3: find the webpage elements
 const showcaseGrid = document.querySelector("#showcase-grid");
 const showcaseStatus = document.querySelector("#showcase-status");
@@ -27,6 +29,7 @@ async function loadShowcase() {
                 photo.src = item.image_url;
                 photo.alt = "Photo for" + item.title;
                 photo.loading = "lazy";
+                photo.loading = "async";
 
                 photo.addEventListener("error", () => photo.remove());
                 card.appendChild(photo);

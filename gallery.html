@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="css/sprite.css">
     <link rel="stylesheet" href="css/cards.css">
 
-    <!-- Lab 15 | Task 1: add js -->
+    <!-- Lab 15 | Task 1: add js. themes.js stays plain (no defer) so the
+         theme is applied before the first paint. -->
+    <script src="javascript/themes.js"></script>
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/themes.js" defer></script>
-    <script src="javascript/gallery.js" defer></script>
 </head>
 
 <body>
@@ -29,35 +29,28 @@
     <!-- Lab 12 | Task 1: Current page-->
     <nav>
         <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
-            <li>
-                <a href="gallery.html" class="current">Gallery</a>
-            </li>
-            <li>
-                <a href="interests.html">Interests</a>
-            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html" class="current">Gallery</a></li>
+            <li><a href="interests.html">Interests</a></li>
             <!-- Class 16 | Step 1: contact link. -->
-            <li>
-                <a href="contact.html">Contact Me</a>
-            </li>
-            <!-- Lab 15 | Task 1: add the button -->
-            <li>
-                <button id="toggle-theme" type="button"></button>
+            <li><a href="contact.html">Contact Me</a></li>
+            <!-- Lab 15 | Task 1: theme dropdown [options created in javascript] -->
+            <li class="theme-picker">
+                <label for="theme-select" class="selector"></label>
+                <select id="theme-select"></select>
             </li>
         </ul>
     </nav>
 
-    <header> 
-        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
+    <header>
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left" fetchpriority="high">
         <!-- Lab 13 | Task 2: My own page-->
         <div class="content">
             <h1>Gallery</h1>
         </div>
+        <!-- The sprite window (.pixel-art-right) must have a fixed width and
+             height in sprite.css so it reserves its space too. -->
         <label class="spritesheet_container">
             <input type="checkbox" class="pixel-art-right-toggle">
             <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
@@ -82,8 +75,6 @@
                     <button type="button" class="dropdown">&gt;</button>
                     <h3>Digital</h3>
                 </div>
-
-                <!-- The cards container sits safely below the header -->
                 <div class="cards" data-gallery="digital"></div>
             </div>
 
@@ -92,9 +83,8 @@
                 <button type="button" class="dropdown">&gt;</button>
                 <h3>Photographs</h3>
             </div>
-
             <div class="cards" data-gallery="photographs">
-                <!-- Lab 14 | Task 3: cards on my page [ now from javascript ]-->
+                <!-- Lab 14 | Task 3: cards [ now from javascript ]-->
             </div>
         </section>
 
@@ -114,9 +104,11 @@
 
     <footer>
         <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
-            <p>&copy; <span id="year"></span> Daltyn Landas.</p>
+            <p>&copy; <span id="year">2026</span> Daltyn Landas.</p>
         </a>
     </footer>
+    <!-- Load images in the body to stop shift -->
+    <script src="javascript/gallery.js"></script>
 </body>
 
 </html>

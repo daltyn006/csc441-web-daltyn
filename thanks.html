@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Return to Home • Daltyn</title>
-        <meta name="description" content="Your message was sent successfully. Thank you for reaching out.">
-        <link rel="icon" type="image/x-icon" href="assets/other/favicon.ico">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/other/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/other/favicon-16x16.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/other/apple-touch-icon.png">
-        <link rel="manifest" href="site.webmanifest">
-        <meta name="theme-color" content="#c0c0c0">
-        <!-- Class 12 | Step 1: a typeface I choose-->
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/themes.css">
-        <link rel="stylesheet" href="css/sprite.css">
-        <!-- Class 15 | Step 1: JavaScript file -->
-        <script src="javascript/script.js" defer></script>
-        <script src="javascript/themes.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return to Home • Daltyn</title>
+    <meta name="description" content="Your message was sent successfully. Thank you for reaching out.">
+    <link rel="icon" type="image/x-icon" href="assets/other/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/other/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/other/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/other/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#c0c0c0">
+    <!-- Class 12 | Step 1: a typeface I choose-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/sprite.css">
+    <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="javascript/themes.js"></script>
+    <script src="javascript/script.js" defer></script>
+</head>
 
-    <body>
-        <!-- Lab 12 | Task 1: Current page-->
-        <header>
-            <div class="content">
-                <h1>Daltyn Landas</h1>
+<body>
+    <!-- Lab 12 | Task 1: Current page-->
+    <header>
+        <div class="content">
+            <h1>Daltyn Landas</h1>
+        </div>
+        <!-- Class 15 | Step 3: the theme button [now in javascript] -->
+        <label for="theme-select" class="selector"></label>
+        <select id="theme-select"></select>
+
+
+        <label class="spritesheet_container">
+            <input type="checkbox" class="pixel-art-right-toggle">
+            <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
+                <img src="./assets/animations/default_spritesheet.avif" alt="A small fellow waving."
+                    class="sprite-right-only">
             </div>
-            <!-- Class 15 | Step 3: the theme button -->
-            <button id="toggle-theme" type="button"></button>
-            <label class="spritesheet_container">
-                <input type="checkbox" class="pixel-art-right-toggle">
-                <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
-                    <img src="./assets/animations/default_spritesheet.avif" alt="A small fellow waving."
-                        class="sprite-right-only">
-                </div>
-            </label>
-        </header>
-        <!-- Lab 18: Task 2: where the form lands -->
-        <main>
-            <h1>Thank you for your submission, your message is on its way.</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="projects.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact Me</a>
-                    </li>
-                    <li>
-                        <a href="interests.html">Interests</a>
-                    </li>
-                </ul>
-            </nav>
-        </main>
+        </label>
+    </header>
+    <!-- Lab 18: Task 2: where the form lands -->
+    <main>
+        <h1>Thank you for your submission, your message is on its way.</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+                <li>
+                    <a href="interests.html">Interests</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Me</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
 
-        <footer>
-            <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
-                <!-- Class 15 | Step 2: The year writen by JavaScript -->
-                &copy; <span id="year"></span> Daltyn Landas.
-            </a>
-        </footer>
-    </body>
+    <footer>
+        <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
+            <!-- Class 15 | Step 2: The year writen by JavaScript -->
+            &copy; <span id="year"></span> Daltyn Landas.
+        </a>
+    </footer>
+</body>
 
 </html>

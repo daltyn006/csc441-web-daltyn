@@ -57,32 +57,6 @@
     --footer-link-hover: #410000;
 }
 
-/* Still default for cool users */
-@media (prefers-color-scheme: dark) {
-    :root:not([theme]) {
-        color-scheme: dark;
-
-        --background: black;
-        --text: Bisque;
-        --text-muted: rosybrown;
-        --title-name: goldenrod;
-        --subtitle: sandybrown;
-        --section-title: indianred;
-        --accent: darkgoldenrod;
-        --border: saddlebrown;
-
-        --error: coral;
-        --link: cornsilk;
-        --link-hover: tan;
-        --button-text: antiquewhite;
-        --button-hover: #3a2c1a;
-        --button-border: blanchedalmond;
-
-        --footer-link: khaki;
-        --footer-link-hover: darkkhaki;
-    }
-}
-
 
 /* Explicit Manual Dark Theme for users that don't know it exists */
 :root[theme="dark"] {
@@ -297,20 +271,20 @@
 :root[theme="minima"] {
     color-scheme: light;
 
-    --background: #fdfdfd;
+    --background: #949494;
     --text: #111111;
     --text-muted: #666666;
     --title-name: #111111;
     --subtitle: #515151;
     --section-title: #2a7ae2;
     --accent: #2a7ae2;
-    --border: #cccccc;
+    --border: #ffffff;
 
     --error: #d32f2f;
     --link: #1f66c4;
     --link-hover: #1756a9;
     --button-text: #000000;
-    --button-hover: #cfe3fa;
+    --button-hover: #979797;
     --button-border: #2a7ae2;
 
     --footer-link: #666666;

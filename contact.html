@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="css/form.css">
 
     <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="javascript/themes.js"></script>
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/themes.js" defer></script>
     <script src="javascript/contact.js" defer></script>
 </head>
 
@@ -45,8 +45,11 @@
             <li>
                 <a href="contact.html" class="current">Contact Me</a>
             </li>
-            <!-- Class 15 Step 3 the time button -->
-            <li><button id="toggle-theme" type="button"></button></li>
+            <!-- Lab 15 | Task 1: add the button [Now created in javascript]-->
+            <li>
+                <label for="theme-select" class="selector"></label>
+                <select id="theme-select"></select>
+            </li>
         </ul>
 
     </nav>
@@ -54,7 +57,7 @@
     <!-- Class 11 | Step 2: The Page -->
     <header>
         <!--Class 12 | Step 3: an image-->
-        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left">
+        <img src="./assets/other/me.avif" alt="an image of myself" class="art-left" fetchpriority="high">
         <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
         <div class="content">
             <h1>Contact: Daltyn Landas</h1>

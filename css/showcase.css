@@ -6,6 +6,8 @@
 }
 
 .showcase-grid {
+    min-height: 24rem;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 1rem;
@@ -35,16 +37,20 @@
     line-height: 1.5;
 }
 
-#showcase-status {
+#showcase-status,
+#showcase-count {
+    min-height: 2rem;
     color: var(--text-muted, dimgray);
 }
 
 .showcase-image {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
     display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
+
+
 
 .showcase-body {
     padding: 1rem;

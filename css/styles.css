@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: Calibri, "Trebuchet MS", sans-serif;
-    font-size: small;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Trebuchet MS', sans-serif;
+    font-size: medium;
     line-height: 2;
     transition: all 0.1s ease-in-out;
     color: var(--text);
@@ -19,19 +19,55 @@ body {
 
 /* Unique Items */
 
+.cards {
+    min-height: 20rem;
+}
+
+/* Every thumbnail gets its box BEFORE the image arrives.
+   object-fit crops the thumbnail; the lightbox shows it uncropped. */
+
 section {
     margin-bottom: 2rem;
 }
 
 .art-left {
-    display: flex;
     width: 5rem;
     height: auto;
+    display: flex;
+    flex-shrink: 0;
+    object-fit: cover;
     flex-direction: column;
     align-items: flex-start;
     padding: 1 rem;
     border: 1px solid blanchedalmond;
     border-radius: 75%;
+}
+/* Theme Dropdown Section */
+
+.theme-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none; 
+}
+
+.selector {
+    font-weight: bold;
+}
+
+#theme-select {
+    min-width: 10rem;
+    font: inherit;
+    padding: 4px 8px;
+    border: 1px groove var(--border);
+    background-color: var(--background);
+    color: var(--text);
+    cursor: pointer;
+}
+
+#theme-select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
 }
 
 /* Lists */
