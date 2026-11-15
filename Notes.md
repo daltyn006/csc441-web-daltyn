@@ -79,3 +79,10 @@ Records returned: 5
   4. If the network fails it jumps straight to the catch block. The grid clears out, the status updates to tell you it could not load, and the actual error prints to your browser console so you can debug.
 
   5. Every single card, image, and text element is built inside the JavaScript using createElement and then pushed onto the interests.html.
+
+  # Ai Disclosure: 
+
+  Ai was used to re-order existing css in themes alphabetically. 
+  It was also used as a database to search to figure javascript controls like folder, "images", file, z-index...
+  Webmanifest explanation from generation from favicon.io
+  

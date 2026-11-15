@@ -19,13 +19,6 @@ body {
 
 /* Unique Items */
 
-.cards {
-    min-height: 20rem;
-}
-
-/* Every thumbnail gets its box BEFORE the image arrives.
-   object-fit crops the thumbnail; the lightbox shows it uncropped. */
-
 section {
     margin-bottom: 2rem;
 }
